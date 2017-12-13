@@ -36,10 +36,10 @@ CREATE TABLE Utilisateur(
 #------------------------------------------------------------
 
 CREATE TABLE adresse(
-        id_adresse         int (11) Auto_increment  NOT NULL ,
-        rue1_adresse       Varchar (512) NOT NULL ,
-        rue2_adresse       Varchar (512) ,
-        Code_commune_INSEE Int NOT NULL ,
+        id_adresse      int (11) Auto_increment  NOT NULL ,
+        rue1_adresse    Varchar (512) NOT NULL ,
+        rue2_adresse    Varchar (512) ,
+        Id_code_commune Int ,
         PRIMARY KEY (id_adresse )
 )ENGINE=InnoDB;
 
@@ -143,10 +143,11 @@ CREATE TABLE entretient_individuel(
 #------------------------------------------------------------
 
 CREATE TABLE Commune(
+        Id_code_commune    int (11) Auto_increment  NOT NULL ,
         Code_commune_INSEE Int NOT NULL ,
         Nom_commune        Varchar (255) NOT NULL ,
         Code_postal        Varchar (5) NOT NULL ,
-        PRIMARY KEY (Code_commune_INSEE )
+        PRIMARY KEY (Id_code_commune )
 )ENGINE=InnoDB;
 
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse);
@@ -154,7 +155,7 @@ ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_projet FOREIGN KEY (id_
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_type_profil FOREIGN KEY (id_type_profil) REFERENCES Type_profil(id_type_profil);
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_reunion FOREIGN KEY (id_reunion) REFERENCES Reunion_information_collective(id_reunion);
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_coop FOREIGN KEY (id_coop) REFERENCES Coop_Emploi(id_coop);
-ALTER TABLE adresse ADD CONSTRAINT FK_adresse_Code_commune_INSEE FOREIGN KEY (Code_commune_INSEE) REFERENCES Commune(Code_commune_INSEE);
+ALTER TABLE adresse ADD CONSTRAINT FK_adresse_Id_code_commune FOREIGN KEY (Id_code_commune) REFERENCES Commune(Id_code_commune);
 ALTER TABLE Projet ADD CONSTRAINT FK_Projet_id_utilisateur FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur);
 ALTER TABLE Projet ADD CONSTRAINT FK_Projet_id_secteur_projet FOREIGN KEY (id_secteur_projet) REFERENCES secteur_projet(id_secteur_projet);
 ALTER TABLE Reunion_information_collective ADD CONSTRAINT FK_Reunion_information_collective_id_utilisateur FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur);
