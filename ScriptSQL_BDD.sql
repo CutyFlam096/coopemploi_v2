@@ -8,24 +8,27 @@
 #------------------------------------------------------------
 
 CREATE TABLE Utilisateur(
-        id_utilisateur             int (11) Auto_increment  NOT NULL ,
-        nom_utilisateur            Char (255) NOT NULL ,
-        prenom_utilisateur         Char (255) NOT NULL ,
-        date_naissance_utilisateur Date NOT NULL ,
-        actif                      Bool ,
-        telephone_utilisateur      Varchar (15) ,
-        email_utilisateur          Varchar (255) ,
-        H_F                        Bool ,
-        Nom_profil_utilisateur     Varchar (255) ,
-        mdp_profil_utilisateur     Varchar (255) ,
-        type_utilisateur           Varchar (1) ,
-        statut                     Varchar (1) NOT NULL ,
-        id_adresse                 Int NOT NULL ,
-        id_projet                  Int NOT NULL ,
-        id_type_profil             Int NOT NULL ,
-        emargement                 Bool ,
-        id_reunion                 Int NOT NULL ,
-        id_coop                    Int NOT NULL ,
+        id_utilisateur                int (11) Auto_increment  NOT NULL ,
+        nom_utilisateur               Char (255) NOT NULL ,
+        prenom_utilisateur            Char (255) NOT NULL ,
+        date_naissance_utilisateur    Date NOT NULL ,
+        actif                         Bool ,
+        telephone_utilisateur         Varchar (15) ,
+        email_utilisateur             Varchar (255) ,
+        H_F                           Bool ,
+        Nom_profil_utilisateur        Varchar (255) ,
+        mdp_profil_utilisateur        Varchar (255) ,
+        statut                        Varchar (1) NOT NULL ,
+        date_inscription              Date ,
+        date_confirmation_inscription Date ,
+        confirmation_inscription      Bool ,
+        id_adresse                    Int NOT NULL ,
+        id_projet                     Int NOT NULL ,
+        id_type_profil                Int NOT NULL ,
+        emargement                    Bool ,
+        id_reunion                    Int NOT NULL ,
+        id_coop                       Int NOT NULL ,
+        id_type_utilisateur           Int NOT NULL ,
         PRIMARY KEY (id_utilisateur ) ,
         UNIQUE (Nom_profil_utilisateur )
 )ENGINE=InnoDB;
@@ -66,8 +69,14 @@ CREATE TABLE Projet(
         NIC                Varchar (4) ,
         check_digit_SIRET  Varchar (1) ,
         description_projet Varchar (2056) ,
+        Portable           Varchar (15) ,
+        fixe               Varchar (15) ,
+        mail               Varchar (255) ,
+        chemin_logo        Varchar (512) ,
+        description_logo   Varchar (512) ,
         id_utilisateur     Int NOT NULL ,
         id_secteur_projet  Int NOT NULL ,
+        id_adresse         Int NOT NULL ,
         PRIMARY KEY (id_projet )
 )ENGINE=InnoDB;
 
@@ -150,14 +159,28 @@ CREATE TABLE Commune(
         PRIMARY KEY (Id_code_commune )
 )ENGINE=InnoDB;
 
+
+#------------------------------------------------------------
+# Table: type utilisateur
+#------------------------------------------------------------
+
+CREATE TABLE type_utilisateur(
+        id_type_utilisateur          int (11) Auto_increment  NOT NULL ,
+        designation_type_utilisateur Varchar (255) ,
+        PRIMARY KEY (id_type_utilisateur ) ,
+        UNIQUE (designation_type_utilisateur )
+)ENGINE=InnoDB;
+
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse);
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_projet FOREIGN KEY (id_projet) REFERENCES Projet(id_projet);
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_type_profil FOREIGN KEY (id_type_profil) REFERENCES Type_profil(id_type_profil);
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_reunion FOREIGN KEY (id_reunion) REFERENCES Reunion_information_collective(id_reunion);
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_coop FOREIGN KEY (id_coop) REFERENCES Coop_Emploi(id_coop);
+ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_type_utilisateur FOREIGN KEY (id_type_utilisateur) REFERENCES type_utilisateur(id_type_utilisateur);
 ALTER TABLE adresse ADD CONSTRAINT FK_adresse_Id_code_commune FOREIGN KEY (Id_code_commune) REFERENCES Commune(Id_code_commune);
 ALTER TABLE Projet ADD CONSTRAINT FK_Projet_id_utilisateur FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur);
 ALTER TABLE Projet ADD CONSTRAINT FK_Projet_id_secteur_projet FOREIGN KEY (id_secteur_projet) REFERENCES secteur_projet(id_secteur_projet);
+ALTER TABLE Projet ADD CONSTRAINT FK_Projet_id_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse);
 ALTER TABLE Reunion_information_collective ADD CONSTRAINT FK_Reunion_information_collective_id_utilisateur FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur);
 ALTER TABLE Reunion_information_collective ADD CONSTRAINT FK_Reunion_information_collective_id_lieu FOREIGN KEY (id_lieu) REFERENCES Lieu(id_lieu);
 ALTER TABLE Lieu ADD CONSTRAINT FK_Lieu_id_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse);
