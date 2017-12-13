@@ -36,46 +36,11 @@ CREATE TABLE Utilisateur(
 #------------------------------------------------------------
 
 CREATE TABLE adresse(
-        id_adresse     int (11) Auto_increment  NOT NULL ,
-        rue1_adresse   Varchar (512) NOT NULL ,
-        rue2_adresse   Varchar (512) ,
-        id_code_postal Int NOT NULL ,
+        id_adresse         int (11) Auto_increment  NOT NULL ,
+        rue1_adresse       Varchar (512) NOT NULL ,
+        rue2_adresse       Varchar (512) ,
+        Code_commune_INSEE Int NOT NULL ,
         PRIMARY KEY (id_adresse )
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: Code Postal
-#------------------------------------------------------------
-
-CREATE TABLE Code_Postal(
-        id_code_postal Int NOT NULL ,
-        code_postal    Varchar (5) NOT NULL ,
-        id_ville       Int NOT NULL ,
-        PRIMARY KEY (id_code_postal )
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: Ville
-#------------------------------------------------------------
-
-CREATE TABLE Ville(
-        id_ville          int (11) Auto_increment  NOT NULL ,
-        designation_ville Varchar (255) NOT NULL ,
-        id_pays           Int NOT NULL ,
-        PRIMARY KEY (id_ville )
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: Pays
-#------------------------------------------------------------
-
-CREATE TABLE Pays(
-        id_pays          int (11) Auto_increment  NOT NULL ,
-        designation_pays Varchar (255) NOT NULL ,
-        PRIMARY KEY (id_pays )
 )ENGINE=InnoDB;
 
 
@@ -172,14 +137,24 @@ CREATE TABLE entretient_individuel(
         PRIMARY KEY (id_entretient )
 )ENGINE=InnoDB;
 
+
+#------------------------------------------------------------
+# Table: Commune
+#------------------------------------------------------------
+
+CREATE TABLE Commune(
+        Code_commune_INSEE Int NOT NULL ,
+        Nom_commune        Varchar (255) NOT NULL ,
+        Code_postal        Varchar (5) NOT NULL ,
+        PRIMARY KEY (Code_commune_INSEE )
+)ENGINE=InnoDB;
+
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse);
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_projet FOREIGN KEY (id_projet) REFERENCES Projet(id_projet);
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_type_profil FOREIGN KEY (id_type_profil) REFERENCES Type_profil(id_type_profil);
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_reunion FOREIGN KEY (id_reunion) REFERENCES Reunion_information_collective(id_reunion);
 ALTER TABLE Utilisateur ADD CONSTRAINT FK_Utilisateur_id_coop FOREIGN KEY (id_coop) REFERENCES Coop_Emploi(id_coop);
-ALTER TABLE adresse ADD CONSTRAINT FK_adresse_id_code_postal FOREIGN KEY (id_code_postal) REFERENCES Code_Postal(id_code_postal);
-ALTER TABLE Code_Postal ADD CONSTRAINT FK_Code_Postal_id_ville FOREIGN KEY (id_ville) REFERENCES Ville(id_ville);
-ALTER TABLE Ville ADD CONSTRAINT FK_Ville_id_pays FOREIGN KEY (id_pays) REFERENCES Pays(id_pays);
+ALTER TABLE adresse ADD CONSTRAINT FK_adresse_Code_commune_INSEE FOREIGN KEY (Code_commune_INSEE) REFERENCES Commune(Code_commune_INSEE);
 ALTER TABLE Projet ADD CONSTRAINT FK_Projet_id_utilisateur FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur);
 ALTER TABLE Projet ADD CONSTRAINT FK_Projet_id_secteur_projet FOREIGN KEY (id_secteur_projet) REFERENCES secteur_projet(id_secteur_projet);
 ALTER TABLE Reunion_information_collective ADD CONSTRAINT FK_Reunion_information_collective_id_utilisateur FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur);
