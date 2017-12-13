@@ -1,0 +1,12 @@
+/* [class*="col-"]
+{
+	background-color: lightgreen;
+	border: 2px solid black;
+	border-radius: 8px;
+	text-align: center;
+} */
+
+.statut-connection
+{
+	text-align: right;
+}
