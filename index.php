@@ -8,7 +8,11 @@ $db = new Bdd('mysql:host=localhost', 'dbname=smarty', 'root', '');
 
 // //$action = $_REQUEST['action'];
 if(!isset($_REQUEST['controller']))
-{$controller = 'accueil';}
+{
+    $controller = 'reunion';
+    $_REQUEST['action'] = 'voir';
+    
+}
 else
 {$controller = $_REQUEST['controller'];}
 
@@ -22,8 +26,8 @@ $navigation = $smarty->display('vues/v_navigation.tpl');
 
 switch($controller)
 {
-    case ('accueil'):
-        {$smarty->display("vues/v_accueil.tpl");break;}
+    case ('reunion'):
+        {include("controllers/c_reunion.php");break;}
     case ('connection'):
         {include("controllers/c_connection.php");break;}
 }
