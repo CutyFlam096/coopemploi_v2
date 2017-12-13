@@ -1,6 +1,4 @@
 <?php
-
-
 class Bdd
 {
     private static $connection;
@@ -16,15 +14,14 @@ class Bdd
         catch(PDOException $e)
         {
             echo 'Connexion impossible';
-
             //aller sur une vue erreur de connexion 
         }
     }
     
     public function getCompte($login, $mdp)
     {
-        $req = Bdd::$connection->prepare("SELECT * FROM profil WHERE nom_profil=:login");
-        $req->execute(array('nom_profil' => $login));
+        $req = Bdd::$connection->prepare("SELECT * FROM utilisateur WHERE login=:login");
+        $req->execute(array('login' => $login));
         $utilisateur = $req->fetch(PDO::FETCH_ASSOC);
         
         if ($req->rowCount() == 0)

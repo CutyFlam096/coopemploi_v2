@@ -1,6 +1,3 @@
-<head>
-	<meta charset="utf-8">
-</head>
 <div class='form-group'>
 	<form method='POST' action='index.php?controller=connection&action=inscription'>
 		<label for='login'>Login</label>

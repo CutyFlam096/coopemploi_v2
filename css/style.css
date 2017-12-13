@@ -6,7 +6,26 @@
 	text-align: center;
 } */
 
+@font-face {
+  font-family: 'InterconnectedDemo';
+
+  src: url('../fonts/InterconnectedDemo-regular.ttf'); 
+ }
 .statut-connection
 {
 	text-align: right;
+}
+
+#connection{
+	margin-top: 20px;
+	text-align: right;
+}
+#navigation{
+	background-color: #EFEFEF; 
+}
+#accueil{
+	background-color: #F5F5F5;
+}
+#pied{
+	background-color: #DCDCDC;
 }

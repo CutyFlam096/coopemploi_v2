@@ -7,6 +7,7 @@
         
         <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> 
         <link href="css/style.css" rel="stylesheet" type="text/css" /> 
+        <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
 		
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>

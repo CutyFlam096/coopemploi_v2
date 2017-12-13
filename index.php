@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once ('/smarty-3.1.30/libs/Smarty.class.php');
+require_once ('smarty-3.1.30/libs/Smarty.class.php');
 require_once('models/bdd.php');
 
 $smarty = new Smarty();

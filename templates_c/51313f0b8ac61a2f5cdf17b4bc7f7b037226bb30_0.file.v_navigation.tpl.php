@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-13 10:30:32
-  from "C:\wamp64\www\coopemploiv2\vues\v_navigation.tpl" */
+/* Smarty version 3.1.30, created on 2017-12-13 05:50:10
+  from "C:\wamp\www\coopemploi\vues\v_navigation.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a3101484f7a95_38896521',
+  'unifunc' => 'content_5a30bf924dfbf3_65802578',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '7ee0e921e398b342d42f0de6f65808b4a7dd2cab' => 
+    '51313f0b8ac61a2f5cdf17b4bc7f7b037226bb30' => 
     array (
-      0 => 'C:\\wamp64\\www\\coopemploiv2\\vues\\v_navigation.tpl',
-      1 => 1513161030,
+      0 => 'C:\\wamp\\www\\coopemploi\\vues\\v_navigation.tpl',
+      1 => 1513144161,
       2 => 'file',
     ),
   ),
@@ -20,33 +20,33 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a3101484f7a95_38896521 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a30bf924dfbf3_65802578 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <body> 
 	<div class='container'>
 		<div class='row'>
-			<div class="col-md-3" >
+			<div class="col-lg-3" >
 				<h1><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h1>
 			</div>
 			
-			<div id="connection" class="col-md-offset-3 col-md-6" >
-				<p>
+			<div class="col-lg-9" >
+				<h3>
 					<?php if (isset($_smarty_tpl->tpl_vars['utilisateur']->value)) {?>
-						Vous êtes connecté(e) en tant que <?php echo $_smarty_tpl->tpl_vars['utilisateur']->value['prenom'];?>
+						Vous ètes connecté(e) en tant que <?php echo $_smarty_tpl->tpl_vars['utilisateur']->value['prenom'];?>
  <?php echo $_smarty_tpl->tpl_vars['utilisateur']->value['nom'];?>
 </br>
 						<a href='index.php?controller=connection&action=deconnection'>se deconnecter</a>
 					<?php } else { ?>
-						Vous n'êtes pas connecté(e)</br>
+						Vous n'ètes pas connecté(e)</br>
 						<a href='index.php?controller=connection&action=form-connection'>se connecter</a>
 					<?php }?>
-				</p>
+				</h3>
 			</div>
 		</div>
 		
 		<div class='row'>
-			<nav id="navigation" class='navbar navbar-default'>
+			<nav class='navbar navbar-default'>
 					<div class='navbar-header'>
                                             <a class='navbar-brand' href='index.php'>Présentation de la coopérative</a>
 					</div>
