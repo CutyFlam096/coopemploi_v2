@@ -10,6 +10,4 @@
 		<input type='reset' value='Annuler' class='btn btn-primary'>
 	</form>
 	</br>
-	<p>Pas de compte ?</p>
-	<a id='inscription' href='index.php?controller=connection&action=form-inscription'>Cliquez ici !</a>
 </div>

@@ -4,8 +4,9 @@ class Adresse
 
 	private $rue1_adresse;
 	private $rue2_adresse;
-	private $code_commune_isee;
-
+	private $id_commune;
+    private $une_commune;
+	
     public function __construct($rue1_adresse,$rue2_adresse,$code_commune_isee){
         		
         
@@ -31,11 +32,11 @@ class Adresse
     }
 
 // getter et setter pour récuperer la commune et le code postale 
-    public function getCodeCommmune(){
+    public function getCommune(){
     		return $this->codecommmune;
     }
-    public function setCodeCommune(){
-    	
+    public function setCommune($id_commune){
+        $this->$une_commune = $db->getCommune($id_commune);
     }
 
 }

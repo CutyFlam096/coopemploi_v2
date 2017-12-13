@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-13 06:07:58
+/* Smarty version 3.1.30, created on 2017-12-13 14:26:31
   from "C:\wamp\www\coopemploi\vues\connection\v_form_connection.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a30c3be4a2920_25441155',
+  'unifunc' => 'content_5a31389759bf34_14897236',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '52c5ed1b1a152fa4860233274a205e01162bcbe2' => 
     array (
       0 => 'C:\\wamp\\www\\coopemploi\\vues\\connection\\v_form_connection.tpl',
-      1 => 1513144161,
+      1 => 1513175189,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a30c3be4a2920_25441155 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a31389759bf34_14897236 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class='form-group'>
 	<form method='POST' action='index.php?controller=connection&action=verif-connection'>
@@ -34,7 +34,5 @@ function content_5a30c3be4a2920_25441155 (Smarty_Internal_Template $_smarty_tpl)
 		<input type='reset' value='Annuler' class='btn btn-primary'>
 	</form>
 	</br>
-	<p>Pas de compte ?</p>
-	<a id='inscription' href='index.php?controller=connection&action=form-inscription'>Cliquez ici !</a>
 </div><?php }
 }
