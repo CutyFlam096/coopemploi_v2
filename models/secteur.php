@@ -1,8 +1,16 @@
 <?php
 class Secteur
 {
-    public function __construct(){
+	private $designationsecteruprojet;
+    public function __construct($designationsecteruprojet){
+    	$this->designationsecteurprojet = $designationsecteurprojet;
         
+    }
+     public function getDesignationSecteurProjet(){
+    	return $this->designationsecteurprojet;
+    }
+    public function setDesignationSecteurProjet(){
+    	
     }
 }
 
