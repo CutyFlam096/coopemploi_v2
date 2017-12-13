@@ -15,7 +15,7 @@ CREATE TABLE Utilisateur(
         actif                      Bool ,
         telephone_utilisateur      Varchar (15) ,
         email_utilisateur          Varchar (255) ,
-        H/F                        Bool ,
+        H_F                        Bool ,
         Nom_profil_utilisateur     Varchar (255) ,
         mdp_profil_utilisateur     Varchar (255) ,
         type_utilisateur           Varchar (1) ,
