@@ -133,7 +133,7 @@ CREATE TABLE entretient_individuel(
         date_entretient            Date ,
         rapport_entretient         Varchar (2048) ,
         id_utilisateur             Int NOT NULL ,
-        id_utilisateur_Utilisateur Int NOT NULL ,
+        id_utilisateur_conseiller Int NOT NULL ,
         PRIMARY KEY (id_entretient )
 )ENGINE=InnoDB;
 
@@ -144,7 +144,7 @@ CREATE TABLE entretient_individuel(
 
 CREATE TABLE Commune(
         Id_code_commune    int (11) Auto_increment  NOT NULL ,
-        Code_commune_INSEE Int NOT NULL ,
+        Code_commune_INSEE Varchar (5) NOT NULL ,
         Nom_commune        Varchar (255) NOT NULL ,
         Code_postal        Varchar (5) NOT NULL ,
         PRIMARY KEY (Id_code_commune )
@@ -163,4 +163,4 @@ ALTER TABLE Reunion_information_collective ADD CONSTRAINT FK_Reunion_information
 ALTER TABLE Lieu ADD CONSTRAINT FK_Lieu_id_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse);
 ALTER TABLE Coop_Emploi ADD CONSTRAINT FK_Coop_Emploi_id_adresse FOREIGN KEY (id_adresse) REFERENCES adresse(id_adresse);
 ALTER TABLE entretient_individuel ADD CONSTRAINT FK_entretient_individuel_id_utilisateur FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur);
-ALTER TABLE entretient_individuel ADD CONSTRAINT FK_entretient_individuel_id_utilisateur_Utilisateur FOREIGN KEY (id_utilisateur_Utilisateur) REFERENCES Utilisateur(id_utilisateur);
+ALTER TABLE entretient_individuel ADD CONSTRAINT FK_entretient_individuel_id_utilisateur_conseiller FOREIGN KEY (id_utilisateur_conseiller) REFERENCES Utilisateur(id_utilisateur);
