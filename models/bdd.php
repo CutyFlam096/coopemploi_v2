@@ -97,6 +97,7 @@ class Bdd
         $req->execute();
         $result = $req->fetch(PDO::FETCH_BOTH);
         $unUtil = new Utilisateur($result['id_utilisateur'], $result['nom_utilisateur'], $result['prenom_utilisateur'], $result['date_naissance_utilisateur'], $result['telephone_utilisateur'], $result['email_utilisateur'], $result['nom_profil_utilisateur'], $result['mdp_profil_utilisateur'], $result['type_utilisateur'], $result['id_adresse'], $result['id_projet'], $result['id_type_profil'], $result['emargement'], $result['id_reunion'], $result['id_coop'], $result['id_statut']);
+        $unUtil->une_adresse = Bdd::getAdresseId($result['id_adresse']);
         return $unUtil; 
     }
     
@@ -181,7 +182,7 @@ class Bdd
         $req->execute(array(':id' => $unId));
         $result = $req->fetch(PDO::FETCH_BOTH);
         $uneadresse = new adresse($result['id_adresse'], $result['rue1_adresse'],$result['rue2_adresse'],$result['Id_code_commune']);
-        var_dump($uneadresse);
+        //var_dump($uneadresse);
         
         return $uneadresse;
     }
@@ -204,7 +205,7 @@ class Bdd
             $un_projet->un_secteur = Bdd::getSecteurId($proj['id_secteur_projet']);
            array_push($desProjets, $un_projet);
         }
-        var_dump($desProjets);
+        //var_dump($desProjets);
         return $desProjets; 
     }
 

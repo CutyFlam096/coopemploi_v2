@@ -25,7 +25,7 @@
 					</div>
 					<ul class='nav navbar-nav'>
                                             <li><a href='index.php'>FAQ</a></li>
-                                            <li><a href='index.php'>Porteurs de projet</a></li>
+                                            <li><a href='index.php?controller=porteur&action=voir'>Porteurs de projet</a></li>
                                             <li><a href='index.php'>Contact</a></li>
                                         </ul>
 

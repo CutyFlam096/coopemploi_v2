@@ -1,0 +1,246 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"nom",
+				"nom_profil"
+			],
+			[
+				"me",
+				"meta\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/wamp64/www/coopemploiv2/vues/v_navigation.tpl",
+		"/C/wamp64/www/coopemploiv2/vues/v_pied.tpl",
+		"/C/wamp64/www/coopemploiv2/vues/v_accueil.tpl",
+		"/C/wamp64/www/coopemploiv2/vues/v_entete.tpl",
+		"/C/wamp64/www/coopemploiv2/index.php",
+		"/C/wamp64/www/coopemploiv2/bootstrap-3.3.7-dist/css/bootstrap.css",
+		"/C/wamp64/www/coopemploiv2/css/style.css",
+		"/C/wamp64/www/coopemploiv2/bootstrap-3.3.7-dist/fonts/InterconnectedDemo-Regular.ttf",
+		"/C/wamp64/www/coopemploiv2/vues/connection/v_valide_connection_compte.tpl",
+		"/C/wamp64/www/coopemploiv2/vues/connection/v_form_connection.tpl",
+		"/C/wamp64/www/coopemploiv2/vues/connection/v_form_inscription.tpl",
+		"/C/wamp64/www/coopemploi/index.php",
+		"/C/wamp64/www/coopemploi/include/infoConnexion.php",
+		"/C/wamp64/www/coopemploi/include/executeRequete.php",
+		"/C/wamp64/www/coopemploiv2/models/bdd.php",
+		"/C/wamp64/www/coopemploi/include/connect.php",
+		"/C/wamp64/www/coopemploi/include/configuration.php",
+		"/C/wamp64/www/coopemploi/index².php",
+		"/C/wamp64/www/coopemploi/controller/authetificationControleur.php",
+		"/C/wamp64/www/coopemploi/models/bdd.php",
+		"/C/wamp64/www/coopemploi/models/modele.php",
+		"/C/wamp64/www/coopemploi/models/authetificationModele.php",
+		"/C/wamp64/www/coopemploi/controller/routeur.php",
+		"/C/wamp64/www/gourmandisesarl/controleur/common.js",
+		"/C/wamp64/www/coopemploi/pourSession.php",
+		"/C/Users/ycolin/Downloads/coopemploi-test-patrice3/coopemploi-test-patrice3/models/bdd.php",
+		"/C/Users/ycolin/Downloads/coopemploi-test-patrice3/coopemploi-test-patrice3/index.php",
+		"/C/wamp64/www/coopemploi/modele/authetificationModele.php",
+		"/C/wamp64/www/coopemploi/modele/modele.php",
+		"/C/Users/ycolin/Downloads/coopemploi-master/coopemploi-master/ScriptSQL_BDD.sql",
+		"/E/P2-master/pass.php",
+		"/C/wamp64/www/gourmandisesarl/controleur/authetificationControleur.php",
+		"/C/wamp64/www/gourmandisesarl/authetification.php",
+		"/C/wamp64/www/gourmandisesarl/controleur/router.php",
+		"/C/wamp64/www/gourmandisesarl/pourSession.php",
+		"/C/wamp64/www/gourmandisesarl/index.php",
+		"/C/wamp64/www/gourmandisesarl/include/connect.php",
+		"/C/wamp64/www/gourmandisesarl/Modele/authetificationModele.php",
+		"/C/wamp64/www/gourmandisesarl/Modele/modele.php",
+		"/C/wamp64/www/gourmandisesarl/include/executeRequete.php",
+		"/C/wamp64/www/gourmandisesarl/include/infoConnexion.php",
+		"/C/wamp64/www/gourmandisesarl/include/configuration.php",
+		"/C/wamp64/www/gourmandisesarl/controleur/dashboardControleur.php",
+		"/C/wamp64/www/gourmandisesarl/logout.php",
+		"/C/wamp64/www/gourmandisesarl/VUE/dashboard.tpl",
+		"/C/wamp64/www/gourmandisesarl/VUE/dashboard.php",
+		"/E/php/CRUD/include/executeRequete.php",
+		"/C/wamp64/www/gourmandisesarl/authetification.tpl",
+		"/E/php/connect.php",
+		"/E/php/CRUD/include/connect.php",
+		"/E/gourmandisesarl/pourSession.php",
+		"/E/gourmandisesarl/authetification.php",
+		"/E/gourmandisesarl/authetification.tpl",
+		"/E/php/sProgramme.php",
+		"/E/php/infoConnexion.php",
+		"/E/php/executeRequete.php",
+		"/E/Projet_2_dynamique/DISII/pass.php",
+		"/E/Projet_2_dynamique/users.sql"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

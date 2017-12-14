@@ -46,6 +46,11 @@ switch($controller)
         include('controllers/c_connection.php');
         break;
     }
+    case 'porteur':
+    {
+        include('controllers/c_porteur.php');
+        break;
+    }
 }
 $pied = $smarty->display('vues/v_pied.tpl');
 ?>

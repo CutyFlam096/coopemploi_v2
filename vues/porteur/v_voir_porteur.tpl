@@ -15,9 +15,9 @@
 	    <div class='col-xs-6  projet '>
 		    <div class="thumbnail">
 		    Nom du projet : {$project->nom_projet} <br>
-        Secteur : {$project->un_secteur->designation_secteur_projet}<br>
-        Porteur du Projet : {$project->un_porteur->prenom} {$project->un_porteur->nom} <br>
-        Adresse du Porteur : {$project->un_porteur->une_adresse->rue1_adresse} {$project->un_porteur->une_adresse->rue2_adresse}<br>
+            Secteur : {$project->un_secteur->designation_secteur_projet}<br>
+            Porteur du Projet : {$project->un_porteur->prenom} {$project->un_porteur->nom} <br>
+            Adresse du Porteur : {$project->un_porteur->une_adresse->rue1_adresse} {$project->un_porteur->une_adresse->rue2_adresse}<br>
 
 		   
         
