@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 14 Décembre 2017 à 08:10
+-- Généré le :  Jeu 14 Décembre 2017 à 08:49
 -- Version du serveur :  5.7.14
 -- Version de PHP :  7.0.10
 
@@ -141,15 +141,16 @@ CREATE TABLE `projet` (
   `check_digit_SIRET` varchar(1) DEFAULT NULL,
   `description_projet` varchar(2056) DEFAULT NULL,
   `id_utilisateur` int(11) NOT NULL,
-  `id_secteur_projet` int(11) NOT NULL
+  `id_secteur_projet` int(11) NOT NULL,
+  `site_web` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `projet`
 --
 
-INSERT INTO `projet` (`id_projet`, `nom_projet`, `SIREN`, `NIC`, `check_digit_SIRET`, `description_projet`, `id_utilisateur`, `id_secteur_projet`) VALUES
-(1, 'supai rhorednateur', NULL, NULL, NULL, 'des tas de choses', 3, 1);
+INSERT INTO `projet` (`id_projet`, `nom_projet`, `SIREN`, `NIC`, `check_digit_SIRET`, `description_projet`, `id_utilisateur`, `id_secteur_projet`, `site_web`) VALUES
+(1, 'supai rhorednateur', NULL, NULL, NULL, 'des tas de choses', 3, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -210,7 +211,7 @@ CREATE TABLE `statut` (
 
 INSERT INTO `statut` (`id_statut`, `libelle_statut`) VALUES
 (1, 'CDI'),
-(2, 'CDD');
+(2, 'autre');
 
 -- --------------------------------------------------------
 
