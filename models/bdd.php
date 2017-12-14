@@ -186,28 +186,42 @@ class Bdd
         
         return $uneadresse;
     }
-    public function getAllProjets(){
+    public function getAllPorteurs(){
         $req = Bdd::$connection->prepare("SELECT * FROM projet");
         $req->execute();
-        $desProjets = array();
+        $desPorteurs = array();
            
             
         
-        while ($proj = $req->fetch())
+        while ($port = $req->fetch())
         {
             //faire le porteur de projet par rapport a l'id util du projet
             //faire le secteur
             //faire le projet et lui ajouter porteur et secteur
             //ajouter le projet dans les projets
 
-           $un_projet = new projet($proj['id_projet'], $proj['nom_projet'], $proj['SIREN'], $proj['NIC'], $proj['check_digit_SIRET'],$proj['description_projet'], $proj['id_utilisateur'],$proj['id_secteur_projet'], $proj['site_web']);
-            $un_projet->un_porteur = Bdd::getPersonneId($proj['id_utilisateur']);
-            $un_projet->un_secteur = Bdd::getSecteurId($proj['id_secteur_projet']);
-           array_push($desProjets, $un_projet);
+           $un_projet = new projet($port['id_projet'], $port['nom_projet'], $port['SIREN'], $port['NIC'], $port['check_digit_SIRET'],$port['description_projet'], $port['id_utilisateur'],$port['id_secteur_projet'], $port['site_web']);
+            $un_projet->un_porteur = Bdd::getPersonneId($port['id_utilisateur']);
+            $un_projet->un_secteur = Bdd::getSecteurId($port['id_secteur_projet']);
+           array_push($desPorteurs, $un_projet);
         }
         //var_dump($desProjets);
-        return $desProjets; 
+        return $desPorteurs; 
     }
+
+    public function getProjetId($unId){
+        $req = Bdd::$connection->prepare("SELECT * FROM projet where id_projet = :id");
+
+        $req->execute(array(':id' => $unId));
+        $result = $req->fetch(PDO::FETCH_BOTH);
+        $un_projet = new projet($result['id_projet'], $result['nom_projet'], $result['SIREN'], $result['NIC'], $result['check_digit_SIRET'],$result['description_projet'], $result['id_utilisateur'],$result['id_secteur_projet'], $result['site_web']);
+        $un_projet->un_porteur = Bdd::getPersonneId($result['id_utilisateur']);
+        $un_projet->un_secteur = Bdd::getSecteurId($result['id_secteur_projet']);
+        //var_dump($uneadresse);
+        
+        return $un_projet;  
+   }
+
 
 
 }
