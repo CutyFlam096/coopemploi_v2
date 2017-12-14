@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-13 13:52:09
+/* Smarty version 3.1.30, created on 2017-12-14 06:38:39
   from "C:\wamp\www\coopemploi\vues\reunion\v_voir_reunion.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a313089aabd12_17925952',
+  'unifunc' => 'content_5a321c6f374f35_28310631',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '160f867131ed09156ec87b44fa6b1b889c659736' => 
     array (
       0 => 'C:\\wamp\\www\\coopemploi\\vues\\reunion\\v_voir_reunion.tpl',
-      1 => 1513172938,
+      1 => 1513233508,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a313089aabd12_17925952 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a321c6f374f35_28310631 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class='row'>
     <div class="col-xs-12" >
@@ -28,7 +28,7 @@ function content_5a313089aabd12_17925952 (Smarty_Internal_Template $_smarty_tpl)
 
             <h1>
                 ACCUEIL
-               <small>Voici les réunions a venir ou il reste de la place: </small>
+               <small>Voici les rÃ©unions a venir ou il reste de la place: </small>
             </h1>
         </div>
     </div>
@@ -36,26 +36,31 @@ function content_5a313089aabd12_17925952 (Smarty_Internal_Template $_smarty_tpl)
 
 <div class='row'>
     <?php
-$_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['foo']->step = 1;$_smarty_tpl->tpl_vars['foo']->total = (int) ceil(($_smarty_tpl->tpl_vars['foo']->step > 0 ? 5+1 - (1) : 1-(5)+1)/abs($_smarty_tpl->tpl_vars['foo']->step));
-if ($_smarty_tpl->tpl_vars['foo']->total > 0) {
-for ($_smarty_tpl->tpl_vars['foo']->value = 1, $_smarty_tpl->tpl_vars['foo']->iteration = 1;$_smarty_tpl->tpl_vars['foo']->iteration <= $_smarty_tpl->tpl_vars['foo']->total;$_smarty_tpl->tpl_vars['foo']->value += $_smarty_tpl->tpl_vars['foo']->step, $_smarty_tpl->tpl_vars['foo']->iteration++) {
-$_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration == 1;$_smarty_tpl->tpl_vars['foo']->last = $_smarty_tpl->tpl_vars['foo']->iteration == $_smarty_tpl->tpl_vars['foo']->total;?>
-    <div class='col-xs-4 reunion '>
-        <div class="thumbnail">
-            ville: Neuvy-Pailloux <br>
-            Rue: 3 rue de la boustifaille <br>
-            <br>
-            date: 13/12/2017 <br>
-            debut: 15h30 <br>
-            <br>
-            Organisateur: John Smith<br>
-            <br>
-            
-            <button type="button" class="btn btn-default">S'inscrire</button>
-        </div>
-    </div>
-    <?php }
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['reunions']->value, 'reu');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['reu']->value) {
+?>
+	    <div class='col-xs-4 reunion '>
+		    <div class="thumbnail">
+		    Date de debut:<br> <?php echo $_smarty_tpl->tpl_vars['reu']->value->date_heure_debut_reunion;?>
+ <br>
+		    Date de fin:<br> <?php echo $_smarty_tpl->tpl_vars['reu']->value->date_heure_fin_reunion;?>
+ <br>
+		    Organisateur: <?php echo $_smarty_tpl->tpl_vars['reu']->value->un_organisateur->prenom;?>
+ <?php echo $_smarty_tpl->tpl_vars['reu']->value->un_organisateur->nom;?>
+ <br>
+		    Lieu: <?php echo $_smarty_tpl->tpl_vars['reu']->value->un_lieu->designation_lieu;?>
+ <br>
+		    <br>
+
+      		<a href="index.php?controller=reunion&action=inscription&id_reunion=<?php echo $_smarty_tpl->tpl_vars['reu']->value->id_reunion;?>
+">S'inscrire</a>
+      		</div>
+	    </div>
+    <?php
 }
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
 </div><?php }

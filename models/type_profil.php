@@ -1,7 +1,9 @@
 <?php
 class Type_profil
 {
-	private $designationtypeprofil;
+    public $id_tupe_profil;
+	public $designation_type_profil;
+	
     public function __construct($designationtypeprofil){
         $this->designationtypeprofil = $designationtypeprofil;
     }

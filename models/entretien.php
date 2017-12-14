@@ -1,11 +1,18 @@
 <?php
 class Entretien
 {
-	private $dateentretient;
-	private $rapportentretient;
-    public function __construct($dateentretient, $rapportentretient){
-    	$this->dateentretient = $dateentretient;
-    	$this->rapportentretient = $rapportentretient;
+    public $id_entretien;
+	public $date_entretient;
+	public $rapport_entretient;
+	public $id_porteur;
+	public $id_conseiller;
+	
+	public $un_conseiller;
+	public $un_porteur;
+	
+	public function __construct($date_entretient, $rapport_entretient){
+	    $this->date_entretient = $date_entretient;
+	    $this->rapport_entretient = $rapport_entretient;
         
     }
 

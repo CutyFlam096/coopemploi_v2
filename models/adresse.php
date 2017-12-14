@@ -1,11 +1,12 @@
 <?php
 class Adresse
 {
-
-	private $rue1_adresse;
-	private $rue2_adresse;
-	private $id_commune;
-    private $une_commune;
+    public $id_adresse;
+    public $rue1_adresse;
+    public $rue2_adresse;
+    public $id_commune;
+    
+    public $une_commune;
 	
     public function __construct($rue1_adresse,$rue2_adresse,$code_commune_isee){
         		

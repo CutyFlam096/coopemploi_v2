@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-13 05:50:10
+/* Smarty version 3.1.30, created on 2017-12-13 21:24:46
   from "C:\wamp\www\coopemploi\vues\v_entete.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a30bf9249d7d7_34707229',
+  'unifunc' => 'content_5a319a9ee0b0e2_48993739',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a30bf9249d7d7_34707229 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a319a9ee0b0e2_48993739 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >

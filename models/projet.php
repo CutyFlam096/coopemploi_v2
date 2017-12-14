@@ -1,17 +1,23 @@
 <?php
 class Projet
 {
-	private $nomprojet;
-	private $siren;
-	private $nic;
-	private $checkdigitsiret;
-	private $descriptionprojet;
+    public $id_projet;
+    public $nom_projet;
+    public $nic;
+    public $check_digit_siret;
+    public $description_projet;
+    public $id_createur;
+    public $id_secteur_projet;
+    
+    public $un_createur;
+    public $un_secteur;
+    
     public function __construct($nomprojet,$siren,$nic,$checkdigitsiret,$descriptionprojet){
-    	$this->nomprojet = $nomprojet;
+        $this->nomprojet = $nom_projet;
 		$this->siren = $siren;
 		$this->nic = $nic;
-		$this->checkdigitsiret = $checkdigitsiret;
-		$this->descriptionprojet = $descriptionprojet;
+		$this->checkdigitsiret = $check_digit_siret;
+		$this->descriptionprojet = $description_projet;
         
     }
      public function getNomProjet(){

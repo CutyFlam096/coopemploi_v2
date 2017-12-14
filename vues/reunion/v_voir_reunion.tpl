@@ -4,27 +4,24 @@
 
             <h1>
                 ACCUEIL
-               <small>Voici les réunions a venir ou il reste de la place: </small>
+               <small>Voici les rÃ©unions a venir ou il reste de la place: </small>
             </h1>
         </div>
     </div>
 </div>
 
 <div class='row'>
-    {for $foo=1 to 5}
-    <div class='col-xs-4 reunion '>
-        <div class="thumbnail">
-            ville: Neuvy-Pailloux <br>
-            Rue: 3 rue de la boustifaille <br>
-            <br>
-            date: 13/12/2017 <br>
-            debut: 15h30 <br>
-            <br>
-            Organisateur: John Smith<br>
-            <br>
-            
-            <button type="button" class="btn btn-default">S'inscrire</button>
-        </div>
-    </div>
-    {/for}
+    {foreach $reunions as $reu}
+	    <div class='col-xs-4 reunion '>
+		    <div class="thumbnail">
+		    Date de debut:<br> {$reu->date_heure_debut_reunion} <br>
+		    Date de fin:<br> {$reu->date_heure_fin_reunion} <br>
+		    Organisateur: {$reu->un_organisateur->prenom} {$reu->un_organisateur->nom} <br>
+		    Lieu: {$reu->un_lieu->designation_lieu} <br>
+		    <br>
+
+      		<a href="index.php?controller=reunion&action=inscription&id_reunion={$reu->id_reunion}">S'inscrire</a>
+      		</div>
+	    </div>
+    {/foreach}
 </div>

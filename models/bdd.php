@@ -68,5 +68,48 @@ class Bdd
         
         return true;
     }
+    
+    public function getReunionsAVenir()
+    {
+        $req = Bdd::$connection->prepare(
+        "SELECT * 
+        FROM reunion_information");
+        $req->execute();
+        
+        $desReunions = array();
+        
+        while ($donnees = $req->fetch())
+        {
+           $une_reunion = new Reunion($donnees['id_reunion'], $donnees['date_heure_debut_reunion'], $donnees['date_heure_fin_reunion'], $donnees['id_lieu'], $donnees['id_utilisateur']);
+           $une_reunion->un_organisateur = Bdd::getPersonneId($donnees['id_utilisateur']);
+           $une_reunion->un_lieu = Bdd::getLieuId($donnees['id_lieu']);
+           array_push($desReunions, $une_reunion);
+        }
+        return $desReunions;
+    }
+    
+    public function getPersonneId($unId)
+    {
+        $req = Bdd::$connection->prepare(
+            "SELECT *
+            FROM utilisateur where id_utilisateur = ".$unId);
+        
+        $req->execute();
+        $result = $req->fetch(PDO::FETCH_BOTH);
+        $unUtil = new Utilisateur($result['id_utilisateur'], $result['nom_utilisateur'], $result['prenom_utilisateur'], $result['date_naissance_utilisateur'], $result['actif'], $result['telephone_utilisateur'], $result['email_utilisateur'], $result['H_F'], $result['nom_profil_utilisateur'], $result['mdp_profil_utilisateur'], $result['type_utilisateur'], $result['id_adresse'], $result['id_projet'], $result['id_type_profil'], $result['emargement'], $result['id_reunion'], $result['id_coop'], $result['id_statut']);
+        return $unUtil; 
+    }
+    
+    public function getLieuId($unId)
+    {
+        $req = Bdd::$connection->prepare(
+            "SELECT *
+            FROM lieu where id_lieu = ".$unId);
+        
+        $req->execute();
+        $result = $req->fetch(PDO::FETCH_BOTH);
+        $unLieu = new Lieu($result['id_lieu'], $result['designation_lieu'], $result['place_lieu'], $result['id_adresse']);
+        return $unLieu;
+    }
 }
 ?>
