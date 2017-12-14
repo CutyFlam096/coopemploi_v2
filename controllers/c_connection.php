@@ -13,18 +13,16 @@ switch($action)
             header("location: index.php");
             break;
         }
-    case 'verif-connection':
+    case 'verif_connection':
         {
             $login= $_REQUEST['login'];
             $mdp=$_REQUEST['mdp'];
             
-            var_dump($login);
-            var_dump($mdp);
+            echo 'hey';
             
             $recup = $db->getCompte($login, $mdp);
-                        
             if ($recup)
-            {$smarty->display("vues/connection/v_valide_connection_compte.tpl");}
+            {header("location: index.php");}
             else
             {$smarty->display("vues/connection/v_erreur_connection_compte.tpl");}
             

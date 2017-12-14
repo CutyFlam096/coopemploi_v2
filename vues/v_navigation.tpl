@@ -8,7 +8,7 @@
 			<div class="col-lg-9 statut-connection" >
 				<h3>
 					{if isset($utilisateur)}
-						Vous ètes connecté(e) en tant que {$utilisateur.prenom} {$utilisateur.nom}</br>
+						Vous ètes connecté(e) en tant que {$utilisateur->prenom_utilisateur} {$utilisateur->nom_utilisateur}</br>
 						<a href='index.php?controller=connection&action=deconnection'>se deconnecter</a>
 					{else}
 						Vous n'ètes pas connecté(e)</br>
@@ -23,12 +23,23 @@
 					<div class='navbar-header'>
                                             <a class='navbar-brand' href='index.php'>Accueil</a>
 					</div>
+					
 					<ul class='nav navbar-nav'>
-                                            <li><a href='index.php'>FAQ</a></li>
-                                            <li><a href='index.php?controller=porteur&action=voir'>Porteurs de projet</a></li>
-                                            <li><a href='index.php'>Contact</a></li>
-                                        </ul>
-
-                         </div>
-                    </nav>
-	
+					
+						{if !isset($utilisateur)}
+	                        <li><a href='index.php'>FAQ</a></li>
+	                        <li><a href='index.php?controller=porteur&action=voir'>Porteurs de projet</a></li>
+	                        <li><a href='index.php'>Contact</a></li>
+	                    {elseif $utilisateur->id_type_profil == 1}
+	                    	<li><a href='index.php?controller=projet&action=gerer'>Gestion de son projet</a></li>
+	                    {elseif $utilisateur->id_type_profil == 2}
+		                    <li><a href='index.php'>Valider profil</a></li>
+		                    <li><a href='index.php'>Gerer profil</a></li>
+	                    	<li><a href='index.php'>Gerer rdv</a></li>
+	                    	<li><a href='index.php'>Gerer reunions</a></li>
+	                    {/if}
+	                    
+                    </ul>
+                    
+                 </div>
+            </nav>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-14 09:31:37
+/* Smarty version 3.1.30, created on 2017-12-14 22:46:23
   from "C:\wamp\www\coopemploi\vues\reunion\v_voir_reunion.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a3244f9364ef4_68506561',
+  'unifunc' => 'content_5a32ff3f1e4941_01588485',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '160f867131ed09156ec87b44fa6b1b889c659736' => 
     array (
       0 => 'C:\\wamp\\www\\coopemploi\\vues\\reunion\\v_voir_reunion.tpl',
-      1 => 1513233508,
+      1 => 1513291581,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a3244f9364ef4_68506561 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a32ff3f1e4941_01588485 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class='row'>
     <div class="col-xs-12" >
@@ -46,8 +46,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['reu']->value) {
  <br>
 		    Date de fin:<br> <?php echo $_smarty_tpl->tpl_vars['reu']->value->date_heure_fin_reunion;?>
  <br>
-		    Organisateur: <?php echo $_smarty_tpl->tpl_vars['reu']->value->un_organisateur->prenom;?>
- <?php echo $_smarty_tpl->tpl_vars['reu']->value->un_organisateur->nom;?>
+		    Organisateur: <?php echo $_smarty_tpl->tpl_vars['reu']->value->un_organisateur->prenom_utilisateur;?>
+ <?php echo $_smarty_tpl->tpl_vars['reu']->value->un_organisateur->nom_utilisateur;?>
  <br>
 		    Lieu: <?php echo $_smarty_tpl->tpl_vars['reu']->value->un_lieu->designation_lieu;?>
  <br>

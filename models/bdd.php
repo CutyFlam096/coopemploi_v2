@@ -20,26 +20,43 @@ class Bdd
     
     public function getCompte($login, $mdp)
     {
-        $req = Bdd::$connection->prepare("SELECT * FROM utilisateur WHERE login=:login");
-        $req->execute(array('login' => $login));
-        $utilisateur = $req->fetch(PDO::FETCH_ASSOC);
+        $req = Bdd::$connection->prepare("SELECT * FROM utilisateur WHERE nom_profil_utilisateur = :login");
+        $req->execute(array(':login' => $login));
+        $utilisateur = $req->fetch(PDO::FETCH_BOTH);
         
         if ($req->rowCount() == 0)
         {return false;}
         else
         {
-            echo 'hey';
-            
-            $mdpBDD = $utilisateur['mdp'];
-            var_dump($mdpBDD);
-            if (password_verify($mdp, $mdpBDD))
+            if (password_verify($mdp, $utilisateur['mdp_profil_utilisateur']))
             {
-                $_SESSION['compte'] = new Utilisateur($utilisateur['nom'], $utilisateur['prenom'], $utilisateur['adresse'], $utilisateur['mail'], $utilisateur['tel'], $utilisateur['codepostal'], $utilisateur['ville'], $utilisateur['mdp'], $utilisateur['login']);
+                $_SESSION['compte'] = new Utilisateur
+                ($utilisateur['id_utilisateur'], $utilisateur['nom_utilisateur'], 
+                    $utilisateur['prenom_utilisateur'], 
+                    $utilisateur['date_naissance_utilisateur'], $utilisateur['telephone_utilisateur'], 
+                    $utilisateur['email_utilisateur'], $utilisateur['nom_profil_utilisateur'], 
+                    $utilisateur['mdp_profil_utilisateur'], $utilisateur['type_utilisateur'], $utilisateur['id_adresse'], 
+                    $utilisateur['id_projet'], $utilisateur['id_type_profil'], $utilisateur['emargement'], $utilisateur['id_reunion'], 
+                    $utilisateur['id_coop'], $utilisateur['id_statut']);
+                
                 return true;
             }
             else
             {return false;}
         }
+        
+        
+        
+        
+        $req = Bdd::$connection->prepare(
+            "SELECT *
+            FROM utilisateur where id_utilisateur = ".$unId);
+        
+        $req->execute();
+        $result = $req->fetch(PDO::FETCH_BOTH);
+        $unUtil = new Utilisateur($result['id_utilisateur'], $result['nom_utilisateur'], $result['prenom_utilisateur'], $result['date_naissance_utilisateur'], $result['telephone_utilisateur'], $result['email_utilisateur'], $result['nom_profil_utilisateur'], $result['mdp_profil_utilisateur'], $result['type_utilisateur'], $result['id_adresse'], $result['id_projet'], $result['id_type_profil'], $result['emargement'], $result['id_reunion'], $result['id_coop'], $result['id_statut']);
+        $unUtil->une_adresse = Bdd::getAdresseId($result['id_adresse']);
+        return $unUtil; 
     }
     
     public function _destruct()
@@ -128,7 +145,7 @@ class Bdd
         return $desCommunes;
     }
     
-    public function setInscription($login, $mdp, $nom, $prenom, $date_naissance, $tel, $mail, $id_reunion, $id_commune, $addresse, $complement_adresse)
+    public function setInscription($nom, $prenom, $date_naissance, $tel, $mail, $id_reunion, $id_commune, $addresse, $complement_adresse)
     {
         $req = Bdd::$connection->prepare(
             "INSERT INTO adresse (rue1_adresse, rue2_adresse, Id_code_commune)
@@ -144,14 +161,12 @@ class Bdd
         $id_adresse = Bdd::$connection->lastInsertId();
         
         $req = Bdd::$connection->prepare(
-            "INSERT INTO utilisateur (nom_profil_utilisateur, mdp_profil_utilisateur, id_statut, id_coop, nom_utilisateur, id_type_profil, prenom_utilisateur, id_adresse, date_naissance_utilisateur, telephone_utilisateur, email_utilisateur, id_reunion)
+            "INSERT INTO utilisateur (id_statut, id_coop, nom_utilisateur, id_type_profil, prenom_utilisateur, id_adresse, date_naissance_utilisateur, telephone_utilisateur, email_utilisateur, id_reunion)
             VALUES
-            (:nom_profil, :mdp_profil, :statut, :coop, :nom, :type, :prenom, :addr,  :date, :tel, :mail, :reu)");
+            (:statut, :coop, :nom, :type, :prenom, :addr,  :date, :tel, :mail, :reu)");
         
         
         $req->execute(array(
-            ':nom_profil' => $login,
-            ':mdp_profil' => password_hash($mdp, PASSWORD_DEFAULT),
             ':statut' => 3,
             ':coop' => 1,
             ':nom' => $nom,

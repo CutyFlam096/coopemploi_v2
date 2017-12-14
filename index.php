@@ -1,6 +1,6 @@
 <?php
-session_start();
 require_once ('autoload.php');
+session_start();
 
 $smarty = new Smarty();
 $db = new Bdd('mysql:host=localhost', 'dbname=coop_emploi', 'root', '');
@@ -14,23 +14,10 @@ if(!isset($_REQUEST['controller']))
 else
 {$controller = $_REQUEST['controller'];}
 
-$smarty->assign('title','Smarty');
-
-// $_SESSION['compte'] = new Utilisateur('Fouque', 'Patrice', '3 rue de la boustifaille', 'fouquepatrice@mail.com', '0606060606', '45200', 'Orl�ans', 'PatriceMdp', 'SuperPatou');
-// $_SESSION['nom'] = 'Fouque';
-// $_SESSION['prenom'] = 'Patrice';
-// $_SESSION['adresse'] = '3 rue de la boustifaille';
-// $_SESSION['mail'] = 'fouquepatrice@mail.com';
-// $_SESSION['tel'] = '0606060606';
-// $_SESSION['codepostal'] = '45200';
-// $_SESSION['ville'] = 'Orl�ans';
-// $_SESSION['mdp'] = 'PatriceMdp';
-// $_SESSION['login'] = 'SuperPatou';
-// $_SESSION['id_type_utilisateur'] = 1;
+$smarty->assign('title',"COOP'EMPLOI");
 
 if(isset($_SESSION['compte']))
-{$smarty->assign('utilisateur', (array)$_SESSION['compte'] );}
-
+{$smarty->assign('utilisateur',$_SESSION['compte'] );}
 $entete = $smarty->display('vues/v_entete.tpl');
 $navigation = $smarty->display('vues/v_navigation.tpl');
 

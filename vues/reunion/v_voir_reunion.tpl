@@ -16,7 +16,7 @@
 		    <div class="thumbnail">
 		    Date de debut:<br> {$reu->date_heure_debut_reunion} <br>
 		    Date de fin:<br> {$reu->date_heure_fin_reunion} <br>
-		    Organisateur: {$reu->un_organisateur->prenom} {$reu->un_organisateur->nom} <br>
+		    Organisateur: {$reu->un_organisateur->prenom_utilisateur} {$reu->un_organisateur->nom_utilisateur} <br>
 		    Lieu: {$reu->un_lieu->designation_lieu} <br>
 		    <br>
 

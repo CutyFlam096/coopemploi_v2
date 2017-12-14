@@ -2,21 +2,21 @@
 class Utilisateur
 {
     public $id_utilisateur;
-    public $nom;
-    public $prenom;
-    public $date_naissance;
-    public $tel;
-    public $mail;
-    public $nom_profil;
-    public $mdp_profil;
-    public $type_util;
+    public $nom_utilisateur;
+    public $prenom_utilisateur;
+    public $date_naissance_utilisateur;
+    public $telephone_utilisateur;
+    public $email_utilisateur;
+    public $nom_profil_utilisateur;
+    public $mdp_profil_utilisateur;
+    public $type_utilisateur;
     public $id_adresse;
     public $id_projet;
     public $id_type_profil;
     public $emargement;
     public $id_reunion;
     public $id_coop;
-    public $id_status;
+    public $id_statut;
     
     public $unTypeUtilisateur;
     public $uneAdresse;
@@ -24,23 +24,24 @@ class Utilisateur
     public $reunionParticipe;
     public $unStatut;
     
-    public function __construct($id_utilisateur, $nom, $prenom, $date_naissance, $tel, $mail, $nom_profil, $mdp_profil, $type_util, $id_adresse, $id_projet, $id_type_profil, $emargement, $id_reunion, $id_coop, $id_status){
-        $this->id_utilisateur = $id_utilisateur;
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        $this->date_naissance = $date_naissance;
-        $this->tel = $tel;
-        $this->mail = $mail;
-        $this->nom_profil = $nom_profil;
-        $this->mdp_profil = $mdp_profil;
-        $this->type_util = $type_util;
+    public function __construct($id_utilisateur, $nom_utilisateur, $prenom_utilisateur, $date_naissance_utilisateur, $telephone_utilisateur, $email_utilisateur, $nom_profil_utilisateur, $mdp_profil_utilisateur, $type_utilisateur, $id_adresse, $id_projet, $id_type_profil, $emargement, $id_reunion, $id_coop, $id_statut)
+    {
+        $this->id_utilisateur = $nom_utilisateur;
+        $this->nom_utilisateur = $nom_utilisateur;
+        $this->prenom_utilisateur = $prenom_utilisateur;
+        $this->date_naissance_utilisateur = $date_naissance_utilisateur;
+        $this->telephone_utilisateur = $telephone_utilisateur;
+        $this->email_utilisateur = $email_utilisateur;
+        $this->nom_profil_utilisateur = $nom_profil_utilisateur;
+        $this->mdp_profil_utilisateur = $mdp_profil_utilisateur;
+        $this->type_utilisateur = $type_utilisateur;
         $this->id_adresse = $id_adresse;
         $this->id_projet = $id_projet;
         $this->id_type_profil = $id_type_profil;
         $this->emargement = $emargement;
         $this->id_reunion = $id_reunion;
         $this->id_coop = $id_coop;
-        $this->id_status = $id_status;
+        $this->id_statut = $id_statut;
     }
 }
 
