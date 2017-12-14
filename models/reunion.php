@@ -17,22 +17,6 @@ class Reunion
         $this->id_utilisateur = $id_lieu;
         $this->id_lieu = $id_utilisateur;
     }
-
-     public function getDateHeureDebutReunion(){
-         return $this->$date_heure_debut_reunion;
-    }
-    public function setDateHeureDebutReunion(){
-    	
-    }
-
-
-    public function getDateHeureFinReunion(){
-        return $this->$date_heure_fin_reunion;
-    }
-    public function setDateHeureFinReunion(){
-    	
-    }
-
 }
 
 ?>

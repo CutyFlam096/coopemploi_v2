@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 14 Décembre 2017 à 08:49
+-- Généré le :  Jeu 14 Décembre 2017 à 09:00
 -- Version du serveur :  5.7.14
 -- Version de PHP :  7.0.10
 
@@ -243,10 +243,8 @@ CREATE TABLE `utilisateur` (
   `nom_utilisateur` char(255) NOT NULL,
   `prenom_utilisateur` char(255) NOT NULL,
   `date_naissance_utilisateur` date NOT NULL,
-  `actif` tinyint(1) DEFAULT NULL,
   `telephone_utilisateur` varchar(15) DEFAULT NULL,
   `email_utilisateur` varchar(255) DEFAULT NULL,
-  `H_F` tinyint(1) DEFAULT NULL,
   `nom_profil_utilisateur` varchar(255) DEFAULT NULL,
   `mdp_profil_utilisateur` varchar(255) DEFAULT NULL,
   `type_utilisateur` varchar(1) DEFAULT NULL,
@@ -263,10 +261,10 @@ CREATE TABLE `utilisateur` (
 -- Contenu de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`id_utilisateur`, `nom_utilisateur`, `prenom_utilisateur`, `date_naissance_utilisateur`, `actif`, `telephone_utilisateur`, `email_utilisateur`, `H_F`, `nom_profil_utilisateur`, `mdp_profil_utilisateur`, `type_utilisateur`, `id_adresse`, `id_projet`, `id_type_profil`, `emargement`, `id_reunion`, `id_coop`, `id_statut`) VALUES
-(1, 'Delabellemotte', 'Jean-Paul', '2017-12-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 2),
-(2, 'Delabellemotte', 'Jean-Paul', '2017-12-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 2),
-(3, 'Delabellemotte2', 'Jean-Paul2', '2017-12-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 1);
+INSERT INTO `utilisateur` (`id_utilisateur`, `nom_utilisateur`, `prenom_utilisateur`, `date_naissance_utilisateur`, `telephone_utilisateur`, `email_utilisateur`, `nom_profil_utilisateur`, `mdp_profil_utilisateur`, `type_utilisateur`, `id_adresse`, `id_projet`, `id_type_profil`, `emargement`, `id_reunion`, `id_coop`, `id_statut`) VALUES
+(1, 'Delabellemotte', 'Jean-Paul', '2017-12-05', NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 2),
+(2, 'Delabellemotte', 'Jean-Paul', '2017-12-05', NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 2),
+(3, 'Delabellemotte2', 'Jean-Paul2', '2017-12-05', NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 1);
 
 --
 -- Index pour les tables exportées
