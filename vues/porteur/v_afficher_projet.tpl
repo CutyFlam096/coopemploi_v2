@@ -14,7 +14,7 @@
  
 	    <div class='col-xs-6  projet '>
 		    <div class="thumbnail">
-		    Nom du projet : {$projet->description_projet} <br>
+		   Description du projet : {$projet->description_projet} <br>
 
 
 		   
