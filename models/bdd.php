@@ -160,5 +160,54 @@ class Bdd
             ':reu' => $id_reunion
         ));
     }
+
+     public function getSecteurId($unId){
+
+        $req = Bdd::$connection->prepare(
+            "SELECT *
+            FROM secteur_projet where id_secteur_projet = ".$unId);
+        
+        $req->execute();
+        $result = $req->fetch(PDO::FETCH_BOTH);
+        $unsecteur = new secteur($result['id_secteur_projet'], $result['designation_secteur_projet']);
+        return $unsecteur; 
+
+    }
+
+    public function getAdresseId($unId){
+          $req = Bdd::$connection->prepare(
+            "SELECT * FROM adresse where id_adresse = :id");
+
+        $req->execute(array(':id' => $unId));
+        $result = $req->fetch(PDO::FETCH_BOTH);
+        $uneadresse = new adresse($result['id_adresse'], $result['rue1_adresse'],$result['rue2_adresse'],$result['Id_code_commune']);
+        var_dump($uneadresse);
+        
+        return $uneadresse;
+    }
+    public function getAllProjets(){
+        $req = Bdd::$connection->prepare("SELECT * FROM projet");
+        $req->execute();
+        $desProjets = array();
+           
+            
+        
+        while ($proj = $req->fetch())
+        {
+            //faire le porteur de projet par rapport a l'id util du projet
+            //faire le secteur
+            //faire le projet et lui ajouter porteur et secteur
+            //ajouter le projet dans les projets
+
+           $un_projet = new projet($proj['id_projet'], $proj['nom_projet'], $proj['SIREN'], $proj['NIC'], $proj['check_digit_SIRET'],$proj['description_projet'], $proj['id_utilisateur'],$proj['id_secteur_projet'], $proj['site_web']);
+            $un_projet->un_porteur = Bdd::getPersonneId($proj['id_utilisateur']);
+            $un_projet->un_secteur = Bdd::getSecteurId($proj['id_secteur_projet']);
+           array_push($desProjets, $un_projet);
+        }
+        var_dump($desProjets);
+        return $desProjets; 
+    }
+
+
 }
 ?>
