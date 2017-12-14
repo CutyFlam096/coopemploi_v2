@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-14 09:31:14
+/* Smarty version 3.1.30, created on 2017-12-14 13:58:08
   from "C:\wamp\www\coopemploi\vues\v_navigation.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a3244e22d2f04_21141982',
+  'unifunc' => 'content_5a328370e72ba3_05382427',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '51313f0b8ac61a2f5cdf17b4bc7f7b037226bb30' => 
     array (
       0 => 'C:\\wamp\\www\\coopemploi\\vues\\v_navigation.tpl',
-      1 => 1513156738,
+      1 => 1513259878,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a3244e22d2f04_21141982 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a328370e72ba3_05382427 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <body> 
 	<div class='container'>
@@ -52,7 +52,7 @@ function content_5a3244e22d2f04_21141982 (Smarty_Internal_Template $_smarty_tpl)
 					</div>
 					<ul class='nav navbar-nav'>
                                             <li><a href='index.php'>FAQ</a></li>
-                                            <li><a href='index.php'>Porteurs de projet</a></li>
+                                            <li><a href='index.php?controller=porteur&action=voir'>Porteurs de projet</a></li>
                                             <li><a href='index.php'>Contact</a></li>
                                         </ul>
 

@@ -128,7 +128,7 @@ class Bdd
         return $desCommunes;
     }
     
-    public function setInscription($nom, $prenom, $date_naissance, $tel, $mail, $id_reunion, $id_commune, $addresse, $complement_adresse)
+    public function setInscription($login, $mdp, $nom, $prenom, $date_naissance, $tel, $mail, $id_reunion, $id_commune, $addresse, $complement_adresse)
     {
         $req = Bdd::$connection->prepare(
             "INSERT INTO adresse (rue1_adresse, rue2_adresse, Id_code_commune)
@@ -144,11 +144,14 @@ class Bdd
         $id_adresse = Bdd::$connection->lastInsertId();
         
         $req = Bdd::$connection->prepare(
-            "INSERT INTO utilisateur (id_statut, id_coop, nom_utilisateur, id_type_profil, prenom_utilisateur, id_adresse, date_naissance_utilisateur, telephone_utilisateur, email_utilisateur, id_reunion)
+            "INSERT INTO utilisateur (nom_profil_utilisateur, mdp_profil_utilisateur, id_statut, id_coop, nom_utilisateur, id_type_profil, prenom_utilisateur, id_adresse, date_naissance_utilisateur, telephone_utilisateur, email_utilisateur, id_reunion)
             VALUES
-            (:statut, :coop, :nom, :type, :prenom, :addr,  :date, :tel, :mail, :reu)");
+            (:nom_profil, :mdp_profil, :statut, :coop, :nom, :type, :prenom, :addr,  :date, :tel, :mail, :reu)");
+        
         
         $req->execute(array(
+            ':nom_profil' => $login,
+            ':mdp_profil' => password_hash($mdp, PASSWORD_DEFAULT),
             ':statut' => 3,
             ':coop' => 1,
             ':nom' => $nom,

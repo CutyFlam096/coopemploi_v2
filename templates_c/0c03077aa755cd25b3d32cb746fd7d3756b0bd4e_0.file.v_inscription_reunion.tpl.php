@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-14 11:01:15
+/* Smarty version 3.1.30, created on 2017-12-14 14:26:35
   from "C:\wamp\www\coopemploi\vues\reunion\v_inscription_reunion.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a3259fb4c0ea2_96858439',
+  'unifunc' => 'content_5a328a1b2d2ab5_31112814',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0c03077aa755cd25b3d32cb746fd7d3756b0bd4e' => 
     array (
       0 => 'C:\\wamp\\www\\coopemploi\\vues\\reunion\\v_inscription_reunion.tpl',
-      1 => 1513249273,
+      1 => 1513261593,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a3259fb4c0ea2_96858439 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a328a1b2d2ab5_31112814 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class='row'>
     <div class="col-xs-12" >
@@ -29,6 +29,10 @@ function content_5a3259fb4c0ea2_96858439 (Smarty_Internal_Template $_smarty_tpl)
 		<div class='form-group'>
 			<form method='POST' action='index.php?controller=reunion&action=valider_inscription&id_reunion=<?php echo $_smarty_tpl->tpl_vars['id_reunion']->value;?>
 '>
+				<label for='login'>Login:</label>
+				<input name='login' id='login' class='form-control' type='text' value='' size='30' maxlength='45' />
+				<label for='mdp'>Mdp:</label>
+				<input name='mdp' id='mdp' class='form-control' type='password' value='' size='30' maxlength='45' />
 				<label for='nom'>Nom:</label>
 				<input name='nom' id='nom' class='form-control' type='text' value='' size='30' maxlength='45' />
 				<label for='prenom'>Prenom: </label>

@@ -3,6 +3,10 @@
 		<h2>Inscription a la reunion n°{$id_reunion}</h2>
 		<div class='form-group'>
 			<form method='POST' action='index.php?controller=reunion&action=valider_inscription&id_reunion={$id_reunion}'>
+				<label for='login'>Login:</label>
+				<input name='login' id='login' class='form-control' type='text' value='' size='30' maxlength='45' />
+				<label for='mdp'>Mdp:</label>
+				<input name='mdp' id='mdp' class='form-control' type='password' value='' size='30' maxlength='45' />
 				<label for='nom'>Nom:</label>
 				<input name='nom' id='nom' class='form-control' type='text' value='' size='30' maxlength='45' />
 				<label for='prenom'>Prenom: </label>
