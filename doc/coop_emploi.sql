@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 13 Décembre 2017 à 17:23
+-- Généré le :  Jeu 14 Décembre 2017 à 08:10
 -- Version du serveur :  5.7.14
 -- Version de PHP :  7.0.10
 
@@ -170,7 +170,9 @@ CREATE TABLE `reunion_information` (
 --
 
 INSERT INTO `reunion_information` (`id_reunion`, `date_heure_debut_reunion`, `date_heure_fin_reunion`, `id_utilisateur`, `id_lieu`) VALUES
-(2, '2017-12-01 00:00:00', '2017-12-01 14:00:00', 1, 2);
+(2, '2017-12-01 00:00:00', '2017-12-01 14:00:00', 1, 2),
+(3, '2017-12-01 00:00:00', '2017-12-01 14:00:00', 1, 2),
+(4, '2017-12-01 00:00:00', '2017-12-01 18:00:00', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -244,7 +246,7 @@ CREATE TABLE `utilisateur` (
   `telephone_utilisateur` varchar(15) DEFAULT NULL,
   `email_utilisateur` varchar(255) DEFAULT NULL,
   `H_F` tinyint(1) DEFAULT NULL,
-  `Nom_profil_utilisateur` varchar(255) DEFAULT NULL,
+  `nom_profil_utilisateur` varchar(255) DEFAULT NULL,
   `mdp_profil_utilisateur` varchar(255) DEFAULT NULL,
   `type_utilisateur` varchar(1) DEFAULT NULL,
   `id_adresse` int(11) NOT NULL,
@@ -260,7 +262,7 @@ CREATE TABLE `utilisateur` (
 -- Contenu de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`id_utilisateur`, `nom_utilisateur`, `prenom_utilisateur`, `date_naissance_utilisateur`, `actif`, `telephone_utilisateur`, `email_utilisateur`, `H_F`, `Nom_profil_utilisateur`, `mdp_profil_utilisateur`, `type_utilisateur`, `id_adresse`, `id_projet`, `id_type_profil`, `emargement`, `id_reunion`, `id_coop`, `id_statut`) VALUES
+INSERT INTO `utilisateur` (`id_utilisateur`, `nom_utilisateur`, `prenom_utilisateur`, `date_naissance_utilisateur`, `actif`, `telephone_utilisateur`, `email_utilisateur`, `H_F`, `nom_profil_utilisateur`, `mdp_profil_utilisateur`, `type_utilisateur`, `id_adresse`, `id_projet`, `id_type_profil`, `emargement`, `id_reunion`, `id_coop`, `id_statut`) VALUES
 (1, 'Delabellemotte', 'Jean-Paul', '2017-12-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 2),
 (2, 'Delabellemotte', 'Jean-Paul', '2017-12-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 2),
 (3, 'Delabellemotte2', 'Jean-Paul2', '2017-12-05', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 1);
@@ -343,7 +345,7 @@ ALTER TABLE `type_profil`
 --
 ALTER TABLE `utilisateur`
   ADD PRIMARY KEY (`id_utilisateur`),
-  ADD UNIQUE KEY `Nom_profil_utilisateur` (`Nom_profil_utilisateur`),
+  ADD UNIQUE KEY `Nom_profil_utilisateur` (`nom_profil_utilisateur`),
   ADD KEY `FK_utilisateur_id_adresse` (`id_adresse`),
   ADD KEY `FK_utilisateur_id_projet` (`id_projet`),
   ADD KEY `FK_utilisateur_id_type_profil` (`id_type_profil`),
@@ -389,7 +391,7 @@ ALTER TABLE `projet`
 -- AUTO_INCREMENT pour la table `reunion_information`
 --
 ALTER TABLE `reunion_information`
-  MODIFY `id_reunion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_reunion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `secteur_projet`
 --
