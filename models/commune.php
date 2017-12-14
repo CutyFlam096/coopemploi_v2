@@ -6,7 +6,9 @@ class Commune
 	public $nom_commune;
 	public $code_postal;
 
-	public function __construct($nom_commune, $code_postal){
+	public function __construct($id_code_commune, $code_commune_insee, $nom_commune, $code_postal){
+	    $this->id_code_commune = $id_code_commune;
+	    $this->code_commune_insee = $code_commune_insee;
 	    $this->nom_commune = $nom_commune;
 	    $this->code_postal = $code_postal;
     }

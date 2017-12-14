@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-13 21:34:50
+/* Smarty version 3.1.30, created on 2017-12-14 09:31:14
   from "C:\wamp\www\coopemploi\vues\v_pied.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a319cfa315533_10322669',
+  'unifunc' => 'content_5a3244e22e7308_49516684',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a319cfa315533_10322669 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a3244e22e7308_49516684 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 	﻿		<div class='row well'>
 				<div class="col-lg-12">

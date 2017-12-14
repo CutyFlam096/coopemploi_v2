@@ -1,5 +1,5 @@
 <div class='form-group'>
-	<form method='POST' action='index.php?controller=connection&action=verif-connection'>
+	<form method='GET' action='index.php?controller=connection&action=verif-connection'>
 		<label for='login_producteur'>Login</label>
 		<input name='login' id='login' type='text' class='form-control' size='30' maxlength='45' />
 		

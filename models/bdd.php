@@ -96,7 +96,7 @@ class Bdd
         
         $req->execute();
         $result = $req->fetch(PDO::FETCH_BOTH);
-        $unUtil = new Utilisateur($result['id_utilisateur'], $result['nom_utilisateur'], $result['prenom_utilisateur'], $result['date_naissance_utilisateur'], $result['actif'], $result['telephone_utilisateur'], $result['email_utilisateur'], $result['H_F'], $result['nom_profil_utilisateur'], $result['mdp_profil_utilisateur'], $result['type_utilisateur'], $result['id_adresse'], $result['id_projet'], $result['id_type_profil'], $result['emargement'], $result['id_reunion'], $result['id_coop'], $result['id_statut']);
+        $unUtil = new Utilisateur($result['id_utilisateur'], $result['nom_utilisateur'], $result['prenom_utilisateur'], $result['date_naissance_utilisateur'], $result['telephone_utilisateur'], $result['email_utilisateur'], $result['nom_profil_utilisateur'], $result['mdp_profil_utilisateur'], $result['type_utilisateur'], $result['id_adresse'], $result['id_projet'], $result['id_type_profil'], $result['emargement'], $result['id_reunion'], $result['id_coop'], $result['id_statut']);
         return $unUtil; 
     }
     
@@ -104,12 +104,61 @@ class Bdd
     {
         $req = Bdd::$connection->prepare(
             "SELECT *
-            FROM lieu where id_lieu = ".$unId);
+            FROM lieu where id_lieu = :lieu");
         
-        $req->execute();
+        $req->execute(array(':lieu' => $unId));
         $result = $req->fetch(PDO::FETCH_BOTH);
         $unLieu = new Lieu($result['id_lieu'], $result['designation_lieu'], $result['place_lieu'], $result['id_adresse']);
         return $unLieu;
+    }
+    
+    public function getCommunes()
+    {
+        $req = Bdd::$connection->prepare("SELECT * FROM commune");
+        $req->execute();
+        
+        $desCommunes = array();
+        
+        while ($donnees = $req->fetch())
+        {
+            $une_commune = new Commune($donnees['Id_code_commune'], $donnees['Code_commune_INSEE'], $donnees['Nom_commune'], $donnees['Code_postal']);
+            array_push($desCommunes, $une_commune);
+        }
+        return $desCommunes;
+    }
+    
+    public function setInscription($nom, $prenom, $date_naissance, $tel, $mail, $id_reunion, $id_commune, $addresse, $complement_adresse)
+    {
+        $req = Bdd::$connection->prepare(
+            "INSERT INTO adresse (rue1_adresse, rue2_adresse, Id_code_commune)
+            VALUES
+            (:addr, :cpt_addr, :id_commune)");
+        
+        $req->execute(array(
+            ':addr' => $addresse,
+            ':cpt_addr' => $complement_adresse,
+            ':id_commune' => $id_commune
+        ));
+        
+        $id_adresse = Bdd::$connection->lastInsertId();
+        
+        $req = Bdd::$connection->prepare(
+            "INSERT INTO utilisateur (id_statut, id_coop, nom_utilisateur, id_type_profil, prenom_utilisateur, id_adresse, date_naissance_utilisateur, telephone_utilisateur, email_utilisateur, id_reunion)
+            VALUES
+            (:statut, :coop, :nom, :type, :prenom, :addr,  :date, :tel, :mail, :reu)");
+        
+        $req->execute(array(
+            ':statut' => 3,
+            ':coop' => 1,
+            ':nom' => $nom,
+            ':type' => 1,
+            ':prenom' => $prenom,
+            ':addr' => $id_adresse,
+            ':date' => date("Y-m-d", strtotime($date_naissance)),
+            ':tel' => $tel,
+            ':mail' => $mail,
+            ':reu' => $id_reunion
+        ));
     }
 }
 ?>
