@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 15 Décembre 2017 à 13:14
+-- Généré le :  Ven 15 Décembre 2017 à 08:15
 -- Version du serveur :  5.7.14
 -- Version de PHP :  7.0.10
 
@@ -38,8 +38,20 @@ CREATE TABLE `adresse` (
 --
 
 INSERT INTO `adresse` (`id_adresse`, `rue1_adresse`, `rue2_adresse`, `Id_code_commune`) VALUES
+(1, '3 rue de la boustifaille', NULL, 1),
+(2, '4 rue de la boustifaille', 'Batiment A', 2),
 (3, '3 rue de la boustifaille', NULL, 1),
 (4, '4 rue de la boustifaille', 'Batiment A', 2),
+(5, '', '', 1),
+(6, '', '', 1),
+(7, '', '', 1),
+(8, '3 rue de la belle bete', 'cave', 1),
+(9, '3 rue de la belle bete', 'cave', 1),
+(10, '3 rue de la belle bete', 'cave', 1),
+(11, '3 rue de la belle bete', 'cave', 1),
+(12, '3 rue de la belle bete', 'cave', 1),
+(13, '3 rue de la boustifaille', 'cave', 2),
+(14, '3 rue de la boustifaille', 'cave', 2),
 (15, 'ertyu', 'zertyui', 1),
 (16, 'zergt', 'erty', 1),
 (17, '3 rue de la boustifaille', 'cave 6', 2);
@@ -63,9 +75,7 @@ CREATE TABLE `commune` (
 
 INSERT INTO `commune` (`Id_code_commune`, `Code_commune_INSEE`, `Nom_commune`, `Code_postal`) VALUES
 (1, '55200', 'Patrice city', '55200'),
-(2, '55200', 'Patrice ville', '55200'),
-(3, '55200', 'Patrice town', '55200'),
-(4, '55200', 'Patrice bourg', '55200');
+(2, '55200', 'Patrice ville', '55200');
 
 -- --------------------------------------------------------
 
@@ -120,8 +130,8 @@ CREATE TABLE `lieu` (
 --
 
 INSERT INTO `lieu` (`id_lieu`, `designation_lieu`, `place_lieu`, `id_adresse`) VALUES
-(1, 'gymnase', 42, 3),
-(2, 'salle des fetes', 42, 3);
+(1, 'sale defaite', 42, 3),
+(2, 'sale defaite', 42, 3);
 
 -- --------------------------------------------------------
 
@@ -138,25 +148,15 @@ CREATE TABLE `projet` (
   `description_projet` varchar(2056) DEFAULT NULL,
   `id_utilisateur` int(11) NOT NULL,
   `id_secteur_projet` int(11) NOT NULL,
-  `site_web` varchar(50) DEFAULT NULL,
-  `logo` varchar(25) NOT NULL,
-  `raison_social` varchar(25) DEFAULT NULL,
-  `photo_1` varchar(25) DEFAULT NULL,
-  `photo_2` varchar(25) DEFAULT NULL,
-  `photo_3` varchar(25) DEFAULT NULL,
-  `description_photo_1` varchar(50) DEFAULT NULL,
-  `description_photo_2` varchar(50) DEFAULT NULL,
-  `description_photo_3` varchar(50) DEFAULT NULL,
-  `parcours` varchar(100) DEFAULT NULL,
-  `date_publication` date DEFAULT NULL
+  `site_web` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `projet`
 --
 
-INSERT INTO `projet` (`id_projet`, `nom_projet`, `SIREN`, `NIC`, `check_digit_SIRET`, `description_projet`, `id_utilisateur`, `id_secteur_projet`, `site_web`, `logo`, `raison_social`, `photo_1`, `photo_2`, `photo_3`, `description_photo_1`, `description_photo_2`, `description_photo_3`, `parcours`, `date_publication`) VALUES
-(1, 'projet qui dechire', NULL, NULL, NULL, 'Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla Blabla vv', 10, 1, NULL, '', '', NULL, '', '', '', '', NULL, '', NULL);
+INSERT INTO `projet` (`id_projet`, `nom_projet`, `SIREN`, `NIC`, `check_digit_SIRET`, `description_projet`, `id_utilisateur`, `id_secteur_projet`, `site_web`) VALUES
+(1, 'supai rhorednateur', NULL, NULL, NULL, 'des tas de choses', 3, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -217,7 +217,7 @@ CREATE TABLE `statut` (
 
 INSERT INTO `statut` (`id_statut`, `libelle_statut`) VALUES
 (1, 'CDI'),
-(2, 'Autre'),
+(2, 'autre'),
 (3, 'Candidat inscrit');
 
 -- --------------------------------------------------------
@@ -269,8 +269,8 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `nom_utilisateur`, `prenom_utilisateur`, `date_naissance_utilisateur`, `telephone_utilisateur`, `email_utilisateur`, `nom_profil_utilisateur`, `mdp_profil_utilisateur`, `type_utilisateur`, `id_adresse`, `id_projet`, `id_type_profil`, `emargement`, `id_reunion`, `id_coop`, `id_statut`) VALUES
-(1, 'Smith', 'Jean-Paul', '2017-12-05', NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 2),
-(3, 'Connor', 'Jean-Paul2', '2017-12-05', NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 1),
+(1, 'Delabellemotte', 'Jean-Paul', '2017-12-05', NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 2),
+(3, 'Delabellemotte2', 'Jean-Paul2', '2017-12-05', NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 1),
 (10, 'test2', 'test2', '2017-12-06', '0606060606', 'mail@mail.com', 'test2', '$2y$10$CrFNTBOBf.SNtzVfmnrCielHBp4Ed6wXxZVbLZp5uGg7Q9a7IvSwy', NULL, 17, NULL, 1, NULL, 2, 1, 3);
 
 --
@@ -372,7 +372,7 @@ ALTER TABLE `adresse`
 -- AUTO_INCREMENT pour la table `commune`
 --
 ALTER TABLE `commune`
-  MODIFY `Id_code_commune` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id_code_commune` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `coop_emploi`
 --

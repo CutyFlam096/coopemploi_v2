@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-14 13:58:09
-  from "C:\wamp\www\coopemploi\vues\porteur\v_voir_porteur.tpl" */
+/* Smarty version 3.1.30, created on 2017-12-14 14:29:56
+  from "C:\wamp64\www\coopemploiv2\vues\porteur\v_voir_porteur.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a328371befc12_65145315',
+  'unifunc' => 'content_5a328ae4b5cc35_31989840',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'e51cb1db5910913f25a32b9ea637a5fd5a01a09e' => 
+    '3aa20a18d586a04fb116f574e6f2688462adc39a' => 
     array (
-      0 => 'C:\\wamp\\www\\coopemploi\\vues\\porteur\\v_voir_porteur.tpl',
-      1 => 1513259878,
+      0 => 'C:\\wamp64\\www\\coopemploiv2\\vues\\porteur\\v_voir_porteur.tpl',
+      1 => 1513261794,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a328371befc12_65145315 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a328ae4b5cc35_31989840 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class='row'>
     <div class="col-xs-12" >
@@ -36,7 +36,7 @@ function content_5a328371befc12_65145315 (Smarty_Internal_Template $_smarty_tpl)
 
 <div class='row'>
     <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['projet']->value, 'project');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['porteur']->value, 'project');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['project']->value) {
 ?>
@@ -49,8 +49,16 @@ foreach ($_from as $_smarty_tpl->tpl_vars['project']->value) {
             Porteur du Projet : <?php echo $_smarty_tpl->tpl_vars['project']->value->un_porteur->prenom;?>
  <?php echo $_smarty_tpl->tpl_vars['project']->value->un_porteur->nom;?>
  <br>
+            Siren : <?php echo $_smarty_tpl->tpl_vars['project']->value->siren;?>
+<br>
+            NIC : <?php echo $_smarty_tpl->tpl_vars['project']->value->nic;?>
+<br>
             Adresse du Porteur : <?php echo $_smarty_tpl->tpl_vars['project']->value->un_porteur->une_adresse->rue1_adresse;?>
  <?php echo $_smarty_tpl->tpl_vars['project']->value->un_porteur->une_adresse->rue2_adresse;?>
+<br>
+            E-mail : <?php echo $_smarty_tpl->tpl_vars['project']->value->un_porteur->mail;?>
+<br>
+            Téléphone : <?php echo $_smarty_tpl->tpl_vars['project']->value->un_porteur->tel;?>
 <br>
 
 		   

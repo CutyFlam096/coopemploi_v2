@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-14 23:57:28
-  from "C:\wamp\www\coopemploi\vues\v_navigation.tpl" */
+/* Smarty version 3.1.30, created on 2017-12-15 08:44:53
+  from "C:\wamp64\www\coopemploiv2\vues\v_navigation.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a330fe8270187_16484141',
+  'unifunc' => 'content_5a338b85bd5ee4_17593715',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '51313f0b8ac61a2f5cdf17b4bc7f7b037226bb30' => 
+    '7ee0e921e398b342d42f0de6f65808b4a7dd2cab' => 
     array (
-      0 => 'C:\\wamp\\www\\coopemploi\\vues\\v_navigation.tpl',
-      1 => 1513295847,
+      0 => 'C:\\wamp64\\www\\coopemploiv2\\vues\\v_navigation.tpl',
+      1 => 1513327489,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a330fe8270187_16484141 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a338b85bd5ee4_17593715 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <body> 
 	<div class='container'>
@@ -60,8 +60,8 @@ function content_5a330fe8270187_16484141 (Smarty_Internal_Template $_smarty_tpl)
 	                    <?php } elseif ($_smarty_tpl->tpl_vars['utilisateur']->value->id_type_profil == 1) {?>
 	                    	<li><a href='index.php?controller=projet&action=gerer'>Gestion de son projet</a></li>
 	                    <?php } elseif ($_smarty_tpl->tpl_vars['utilisateur']->value->id_type_profil == 2) {?>
-		                    <li><a href='index.php'>Valider profil</a></li>
-		                    <li><a href='index.php'>Gerer profil</a></li>
+		                    <li><a href='#'>Valider profil</a></li>
+		                    <li><a href='index.php?controller=conseiller&action=gerer'>Gerer profil</a></li>
 	                    	<li><a href='index.php'>Gerer rdv</a></li>
 	                    	<li><a href='index.php'>Gerer reunions</a></li>
 	                    <?php }?>
