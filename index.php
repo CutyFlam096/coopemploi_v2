@@ -14,12 +14,16 @@ if(!isset($_REQUEST['controller']))
 else
 {$controller = $_REQUEST['controller'];}
 
-$smarty->assign('title',"COOP'EMPLOI");
-
+ $smarty->assign('title',"COOP'EMPLOI");
+    
 if(isset($_SESSION['compte']))
 {$smarty->assign('utilisateur',$_SESSION['compte'] );}
-$entete = $smarty->display('vues/v_entete.tpl');
-$navigation = $smarty->display('vues/v_navigation.tpl');
+
+if ($_REQUEST['action'] != 'mini_site')
+{
+    $entete = $smarty->display('vues/v_entete.tpl');
+    $navigation = $smarty->display('vues/v_navigation.tpl');
+}
 
 switch($controller)
 {
@@ -38,6 +42,15 @@ switch($controller)
         include('controllers/c_porteur.php');
         break;
     }
+    case 'projet':
+    {
+        include('controllers/c_projet.php');
+        break;
+    }
 }
-$pied = $smarty->display('vues/v_pied.tpl');
+
+if ($_REQUEST['action'] != 'mini_site')
+{
+    $pied = $smarty->display('vues/v_pied.tpl');
+}
 ?>
