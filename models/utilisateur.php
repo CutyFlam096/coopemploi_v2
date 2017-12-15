@@ -26,7 +26,6 @@ class Utilisateur
     
     public function __construct($id_utilisateur, $nom_utilisateur, $prenom_utilisateur, $date_naissance_utilisateur, $telephone_utilisateur, $email_utilisateur, $nom_profil_utilisateur, $mdp_profil_utilisateur, $type_utilisateur, $id_adresse, $id_projet, $id_type_profil, $emargement, $id_reunion, $id_coop, $id_statut)
     {
-
         $this->id_utilisateur = $id_utilisateur;
         $this->nom_utilisateur = $nom_utilisateur;
         $this->prenom_utilisateur = $prenom_utilisateur;

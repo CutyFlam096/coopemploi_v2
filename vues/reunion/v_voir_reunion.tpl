@@ -4,7 +4,7 @@
 
             <h1>
                 ACCUEIL
-               <small>Voici les rÃ©unions a venir ou il reste de la place: </small>
+               <small>Voici les réunions a venir ou il reste de la place: </small>
             </h1>
         </div>
     </div>

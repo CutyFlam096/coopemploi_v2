@@ -11,7 +11,7 @@
 						Vous ètes connecté(e) en tant que {$utilisateur->prenom_utilisateur} {$utilisateur->nom_utilisateur}</br>
 						<a href='index.php?controller=connection&action=deconnection'>se deconnecter</a>
 					{else}
-						Vous n'ètes pas connecté(e) :</br>
+						Vous n'ètes pas connecté(e)</br>
 						<a href='index.php?controller=connection&action=form-connection'>se connecter</a>
 					{/if}
 				</h3>
@@ -27,13 +27,13 @@
 					<ul class='nav navbar-nav'>
 					
 						{if !isset($utilisateur)}
-	                        <li><a href='index.php'>FAQ</a></li>
+	                        <li><a href='index.php?controller=faq&action=voir'>FAQ</a></li>
 	                        <li><a href='index.php?controller=porteur&action=voir'>Porteurs de projet</a></li>
-	                        <li><a href='index.php'>Contact</a></li>
+	                        <li><a href='index.php?controller=contact&action=voir'>Contact</a></li>
 	                    {elseif $utilisateur->id_type_profil == 1}
 	                    	<li><a href='index.php?controller=projet&action=gerer'>Gestion de son projet</a></li>
 	                    {elseif $utilisateur->id_type_profil == 2}
-		                    <li><a href='#'>Valider profil</a></li>
+		                    <li><a href='index.php'>Valider profil</a></li>
 		                    <li><a href='index.php?controller=conseiller&action=gerer'>Gerer profil</a></li>
 	                    	<li><a href='index.php'>Gerer rdv</a></li>
 	                    	<li><a href='index.php'>Gerer reunions</a></li>
