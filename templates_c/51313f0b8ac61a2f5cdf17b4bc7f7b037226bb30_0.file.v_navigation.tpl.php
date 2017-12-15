@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-14 23:57:28
+/* Smarty version 3.1.30, created on 2017-12-15 13:00:34
   from "C:\wamp\www\coopemploi\vues\v_navigation.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a330fe8270187_16484141',
+  'unifunc' => 'content_5a33c772a54de3_61626527',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '51313f0b8ac61a2f5cdf17b4bc7f7b037226bb30' => 
     array (
       0 => 'C:\\wamp\\www\\coopemploi\\vues\\v_navigation.tpl',
-      1 => 1513295847,
+      1 => 1513342833,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a330fe8270187_16484141 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a33c772a54de3_61626527 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <body> 
 	<div class='container'>
@@ -54,9 +54,9 @@ function content_5a330fe8270187_16484141 (Smarty_Internal_Template $_smarty_tpl)
 					<ul class='nav navbar-nav'>
 					
 						<?php if (!isset($_smarty_tpl->tpl_vars['utilisateur']->value)) {?>
-	                        <li><a href='index.php'>FAQ</a></li>
+	                        <li><a href='index.php?controller=faq&action=voir'>FAQ</a></li>
 	                        <li><a href='index.php?controller=porteur&action=voir'>Porteurs de projet</a></li>
-	                        <li><a href='index.php'>Contact</a></li>
+	                        <li><a href='index.php?controller=contact&action=voir'>Contact</a></li>
 	                    <?php } elseif ($_smarty_tpl->tpl_vars['utilisateur']->value->id_type_profil == 1) {?>
 	                    	<li><a href='index.php?controller=projet&action=gerer'>Gestion de son projet</a></li>
 	                    <?php } elseif ($_smarty_tpl->tpl_vars['utilisateur']->value->id_type_profil == 2) {?>

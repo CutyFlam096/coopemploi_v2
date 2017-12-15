@@ -9,7 +9,6 @@ require_once('models/lieu.php');
 require_once('models/projet.php');
 require_once('models/utilisateur.php');
 require_once('models/reunion.php');
-require_once('models/statut.php');
 require_once('models/entretien.php');
 require_once('models/projet.php');
 

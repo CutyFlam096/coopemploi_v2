@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-14 21:59:07
+/* Smarty version 3.1.30, created on 2017-12-15 08:43:51
   from "C:\wamp\www\coopemploi\vues\connection\v_form_connection.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a32f42b280919_69592314',
+  'unifunc' => 'content_5a338b47504ec6_51753779',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a32f42b280919_69592314 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a338b47504ec6_51753779 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class='form-group'>
 	<form method='POST' action='index.php?controller=connection&action=verif_connection'>
