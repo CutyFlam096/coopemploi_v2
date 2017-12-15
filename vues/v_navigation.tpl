@@ -11,7 +11,7 @@
 						Vous ètes connecté(e) en tant que {$utilisateur->prenom_utilisateur} {$utilisateur->nom_utilisateur}</br>
 						<a href='index.php?controller=connection&action=deconnection'>se deconnecter</a>
 					{else}
-						Vous n'ètes pas connecté(e)</br>
+						Vous n'ètes pas connecté(e) :</br>
 						<a href='index.php?controller=connection&action=form-connection'>se connecter</a>
 					{/if}
 				</h3>
