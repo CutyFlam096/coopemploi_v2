@@ -27,9 +27,9 @@
 					<ul class='nav navbar-nav'>
 					
 						{if !isset($utilisateur)}
-	                        <li><a href='index.php'>FAQ</a></li>
+	                        <li><a href='index.php?controller=faq&action=voir'>FAQ</a></li>
 	                        <li><a href='index.php?controller=porteur&action=voir'>Porteurs de projet</a></li>
-	                        <li><a href='index.php'>Contact</a></li>
+	                        <li><a href='index.php?controller=contact&action=voir'>Contact</a></li>
 	                    {elseif $utilisateur->id_type_profil == 1}
 	                    	<li><a href='index.php?controller=projet&action=gerer'>Gestion de son projet</a></li>
 	                    {elseif $utilisateur->id_type_profil == 2}

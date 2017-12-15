@@ -1,6 +1,6 @@
 <div class='form-group'>
 	{if $un_projet != null}
-		<form method='POST' action='index.php?controller=connection&action=verif_connection'>
+		<form method='POST' action='index.php?controller=projet&action={}>
 			<label for='nom'>Nom du projet: </label>
 			<input value='{$un_projet->nom_projet}' name='nom' id='nom' type='text' class='form-control' size='30' maxlength='45' />
 			

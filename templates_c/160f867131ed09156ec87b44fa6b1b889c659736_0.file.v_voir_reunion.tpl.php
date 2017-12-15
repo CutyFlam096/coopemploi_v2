@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-15 08:43:49
+/* Smarty version 3.1.30, created on 2017-12-15 12:51:36
   from "C:\wamp\www\coopemploi\vues\reunion\v_voir_reunion.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a338b453487e3_99938883',
+  'unifunc' => 'content_5a33c55870d8c1_75965733',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '160f867131ed09156ec87b44fa6b1b889c659736' => 
     array (
       0 => 'C:\\wamp\\www\\coopemploi\\vues\\reunion\\v_voir_reunion.tpl',
-      1 => 1513291581,
+      1 => 1513342295,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a338b453487e3_99938883 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a33c55870d8c1_75965733 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class='row'>
     <div class="col-xs-12" >
@@ -28,7 +28,7 @@ function content_5a338b453487e3_99938883 (Smarty_Internal_Template $_smarty_tpl)
 
             <h1>
                 ACCUEIL
-               <small>Voici les rÃ©unions a venir ou il reste de la place: </small>
+               <small>Voici les réunions a venir ou il reste de la place: </small>
             </h1>
         </div>
     </div>

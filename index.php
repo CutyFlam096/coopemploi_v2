@@ -18,8 +18,8 @@ else
     
 if(isset($_SESSION['compte']))
 {$smarty->assign('utilisateur',$_SESSION['compte'] );}
-
-if ($_REQUEST['action'] != 'mini_site')
+ 
+if (!isset($_REQUEST['action']) || $_REQUEST['action'] != 'mini_site')
 {
     $entete = $smarty->display('vues/v_entete.tpl');
     $navigation = $smarty->display('vues/v_navigation.tpl');
@@ -47,9 +47,19 @@ switch($controller)
         include('controllers/c_projet.php');
         break;
     }
+    case 'faq':
+    {
+        include('controllers/c_faq.php');
+        break;
+    }
+    case 'contact':
+    {
+        include('controllers/c_contact.php');
+        break;
+    }
 }
 
-if ($_REQUEST['action'] != 'mini_site')
+if (!isset($_REQUEST['action']) || $_REQUEST['action'] != 'mini_site')
 {
     $pied = $smarty->display('vues/v_pied.tpl');
 }

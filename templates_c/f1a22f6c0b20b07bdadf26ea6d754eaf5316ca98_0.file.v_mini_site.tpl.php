@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-15 11:23:52
+/* Smarty version 3.1.30, created on 2017-12-15 12:47:43
   from "C:\wamp\www\coopemploi\vues\projet\v_mini_site.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a33b0c838bcc9_74223091',
+  'unifunc' => 'content_5a33c46fdea1c2_69368085',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f1a22f6c0b20b07bdadf26ea6d754eaf5316ca98' => 
     array (
       0 => 'C:\\wamp\\www\\coopemploi\\vues\\projet\\v_mini_site.tpl',
-      1 => 1513337030,
+      1 => 1513342056,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a33b0c838bcc9_74223091 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a33c46fdea1c2_69368085 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!doctype html>
 <html lang="fr">
@@ -43,7 +43,7 @@ function content_5a33b0c838bcc9_74223091 (Smarty_Internal_Template $_smarty_tpl)
 					RAISON SOCIAL
 				</div>
 				<div class='col-xs-12'>
-					TITRE DU PROJET
+					Exemple mini-site projet
 				</div>
 			</div>
 		</div>
@@ -82,7 +82,6 @@ function content_5a33b0c838bcc9_74223091 (Smarty_Internal_Template $_smarty_tpl)
 					Blablabla Blablabla Blablabla Blablabla Blablabla <br>
 					Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla 
 			</div>
-			<br>
 			<div class='col-xs-12' style='text-align:left;'>
 				Description du projet:<br>
 				
@@ -96,8 +95,6 @@ function content_5a33b0c838bcc9_74223091 (Smarty_Internal_Template $_smarty_tpl)
 					Blablabla Blablabla Blablabla Blablabla Blablabla <br>
 					Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla 
 			</div>
-			<br>
-			
 		</div>
 			
 		<div class='row pied well'>
@@ -110,8 +107,8 @@ function content_5a33b0c838bcc9_74223091 (Smarty_Internal_Template $_smarty_tpl)
 				mail@mail.com
 			</div>
 			<div class='col-xs-12'>
-				Publication:
-				15/12/2017
+					Publication:
+					15/12/2017
 			</div>
 		</div>
 	</div>

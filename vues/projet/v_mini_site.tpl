@@ -19,7 +19,7 @@
 					RAISON SOCIAL
 				</div>
 				<div class='col-xs-12'>
-					TITRE DU PROJET
+					Exemple mini-site projet
 				</div>
 			</div>
 		</div>
@@ -58,7 +58,6 @@
 					Blablabla Blablabla Blablabla Blablabla Blablabla <br>
 					Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla 
 			</div>
-			<br>
 			<div class='col-xs-12' style='text-align:left;'>
 				Description du projet:<br>
 				
@@ -72,8 +71,6 @@
 					Blablabla Blablabla Blablabla Blablabla Blablabla <br>
 					Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla 
 			</div>
-			<br>
-			
 		</div>
 			
 		<div class='row pied well'>
@@ -86,8 +83,8 @@
 				mail@mail.com
 			</div>
 			<div class='col-xs-12'>
-				Publication:
-				15/12/2017
+					Publication:
+					15/12/2017
 			</div>
 		</div>
 	</div>

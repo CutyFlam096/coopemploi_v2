@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-12-15 10:21:00
+/* Smarty version 3.1.30, created on 2017-12-15 13:08:23
   from "C:\wamp\www\coopemploi\vues\projet\v_projet_gerer.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a33a20c7818e8_68306435',
+  'unifunc' => 'content_5a33c947761923_90282981',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b3afba84c662fd118da02171385004affe3d5fb3' => 
     array (
       0 => 'C:\\wamp\\www\\coopemploi\\vues\\projet\\v_projet_gerer.tpl',
-      1 => 1513333259,
+      1 => 1513343151,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a33a20c7818e8_68306435 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a33c947761923_90282981 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class='form-group'>
 	<?php if ($_smarty_tpl->tpl_vars['un_projet']->value != null) {?>
-		<form method='POST' action='index.php?controller=connection&action=verif_connection'>
+		<form method='POST' action='index.php?controller=projet&action={}>
 			<label for='nom'>Nom du projet: </label>
 			<input value='<?php echo $_smarty_tpl->tpl_vars['un_projet']->value->nom_projet;?>
 ' name='nom' id='nom' type='text' class='form-control' size='30' maxlength='45' />
