@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 14 Décembre 2017 à 09:00
+-- Généré le :  Ven 15 Décembre 2017 à 08:15
 -- Version du serveur :  5.7.14
 -- Version de PHP :  7.0.10
 
@@ -41,7 +41,20 @@ INSERT INTO `adresse` (`id_adresse`, `rue1_adresse`, `rue2_adresse`, `Id_code_co
 (1, '3 rue de la boustifaille', NULL, 1),
 (2, '4 rue de la boustifaille', 'Batiment A', 2),
 (3, '3 rue de la boustifaille', NULL, 1),
-(4, '4 rue de la boustifaille', 'Batiment A', 2);
+(4, '4 rue de la boustifaille', 'Batiment A', 2),
+(5, '', '', 1),
+(6, '', '', 1),
+(7, '', '', 1),
+(8, '3 rue de la belle bete', 'cave', 1),
+(9, '3 rue de la belle bete', 'cave', 1),
+(10, '3 rue de la belle bete', 'cave', 1),
+(11, '3 rue de la belle bete', 'cave', 1),
+(12, '3 rue de la belle bete', 'cave', 1),
+(13, '3 rue de la boustifaille', 'cave', 2),
+(14, '3 rue de la boustifaille', 'cave', 2),
+(15, 'ertyu', 'zertyui', 1),
+(16, 'zergt', 'erty', 1),
+(17, '3 rue de la boustifaille', 'cave 6', 2);
 
 -- --------------------------------------------------------
 
@@ -98,13 +111,6 @@ CREATE TABLE `entretient_individuel` (
   `id_porteur` int(11) NOT NULL,
   `id_conseiller` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `entretient_individuel`
---
-
-INSERT INTO `entretient_individuel` (`id_entretient`, `date_entretient`, `rapport_entretient`, `id_porteur`, `id_conseiller`) VALUES
-(1, '2017-12-04', 'OKAY', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -211,7 +217,8 @@ CREATE TABLE `statut` (
 
 INSERT INTO `statut` (`id_statut`, `libelle_statut`) VALUES
 (1, 'CDI'),
-(2, 'autre');
+(2, 'autre'),
+(3, 'Candidat inscrit');
 
 -- --------------------------------------------------------
 
@@ -263,8 +270,8 @@ CREATE TABLE `utilisateur` (
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `nom_utilisateur`, `prenom_utilisateur`, `date_naissance_utilisateur`, `telephone_utilisateur`, `email_utilisateur`, `nom_profil_utilisateur`, `mdp_profil_utilisateur`, `type_utilisateur`, `id_adresse`, `id_projet`, `id_type_profil`, `emargement`, `id_reunion`, `id_coop`, `id_statut`) VALUES
 (1, 'Delabellemotte', 'Jean-Paul', '2017-12-05', NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 2),
-(2, 'Delabellemotte', 'Jean-Paul', '2017-12-05', NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 2),
-(3, 'Delabellemotte2', 'Jean-Paul2', '2017-12-05', NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 1);
+(3, 'Delabellemotte2', 'Jean-Paul2', '2017-12-05', NULL, NULL, NULL, NULL, NULL, 4, NULL, 2, NULL, NULL, 1, 1),
+(10, 'test2', 'test2', '2017-12-06', '0606060606', 'mail@mail.com', 'test2', '$2y$10$CrFNTBOBf.SNtzVfmnrCielHBp4Ed6wXxZVbLZp5uGg7Q9a7IvSwy', NULL, 17, NULL, 1, NULL, 2, 1, 3);
 
 --
 -- Index pour les tables exportées
@@ -360,7 +367,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `adresse`
 --
 ALTER TABLE `adresse`
-  MODIFY `id_adresse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_adresse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT pour la table `commune`
 --
@@ -400,7 +407,7 @@ ALTER TABLE `secteur_projet`
 -- AUTO_INCREMENT pour la table `statut`
 --
 ALTER TABLE `statut`
-  MODIFY `id_statut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_statut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `type_profil`
 --
@@ -410,7 +417,7 @@ ALTER TABLE `type_profil`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- Contraintes pour les tables exportées
 --
