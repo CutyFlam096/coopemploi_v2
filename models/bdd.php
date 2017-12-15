@@ -109,9 +109,9 @@ class Bdd
     {
         $req = Bdd::$connection->prepare(
             "SELECT *
-            FROM utilisateur where id_utilisateur = ".$unId);
+            FROM utilisateur where id_utilisateur = :id");
         
-        $req->execute();
+        $req->execute(array(':id' => $unId));
         $result = $req->fetch(PDO::FETCH_BOTH);
         $unUtil = new Utilisateur($result['id_utilisateur'], $result['nom_utilisateur'], $result['prenom_utilisateur'], $result['date_naissance_utilisateur'], $result['telephone_utilisateur'], $result['email_utilisateur'], $result['nom_profil_utilisateur'], $result['mdp_profil_utilisateur'], $result['type_utilisateur'], $result['id_adresse'], $result['id_projet'], $result['id_type_profil'], $result['emargement'], $result['id_reunion'], $result['id_coop'], $result['id_statut']);
         $unUtil->une_adresse = Bdd::getAdresseId($result['id_adresse']);
@@ -184,27 +184,15 @@ class Bdd
 
         $req = Bdd::$connection->prepare(
             "SELECT *
-            FROM secteur_projet where id_secteur_projet = ".$unId);
+            FROM secteur_projet where id_secteur_projet = :id");
         
-        $req->execute();
+        $req->execute(array(':id' => $unId));
         $result = $req->fetch(PDO::FETCH_BOTH);
         $unsecteur = new secteur($result['id_secteur_projet'], $result['designation_secteur_projet']);
         return $unsecteur; 
 
     }
-    
-    public function getAllSecteurs(){
-        $req = Bdd::$connection->prepare("SELECT * FROM secteur_projet");
-        $req->execute();
-        $des_secteurs = array();
-        while ($secteur = $req->fetch())
-        {
-            $un_secteur = new Secteur($secteur['id_secteur_projet'], $secteur['designation_secteur_projet']);
-            array_push($des_secteurs, $un_secteur);
-        }
-        return $des_secteurs;
-    }
-    
+
     public function getAdresseId($unId){
           $req = Bdd::$connection->prepare(
             "SELECT * FROM adresse where id_adresse = :id");
@@ -216,7 +204,6 @@ class Bdd
         
         return $uneadresse;
     }
-    
     public function getAllPorteurs(){
         $req = Bdd::$connection->prepare("SELECT * FROM projet");
         $req->execute();
@@ -224,20 +211,13 @@ class Bdd
            
             
         
-        while ($result = $req->fetch())
+        while ($port = $req->fetch())
         {
-            //faire le porteur de projet par rapport a l'id util du projet
-            //faire le secteur
-            //faire le projet et lui ajouter porteur et secteur
-            //ajouter le projet dans les projets
+           
 
-            $un_projet = new Projet($result['id_projet'], $result['nom_projet'], $result['SIREN'], $result['NIC'],
-                $result['check_digit_SIRET'], $result['description_projet'], $result['id_utilisateur'],
-                $result['id_secteur_projet'], $result['site_web'], $result['photo_1'], $result['photo_2'],
-                $result['photo_3'], $result['description_photo_1'], $result['description_photo_2'],
-                $result['description_photo_3'], $result['parcours'], $result['date_publication'], $result['logo']);
-            $un_projet->un_porteur = Bdd::getPersonneId($result['id_utilisateur']);
-            $un_projet->un_secteur = Bdd::getSecteurId($result['id_secteur_projet']);
+           $un_projet = new projet($port['id_projet'], $port['nom_projet'], $port['SIREN'], $port['NIC'], $port['check_digit_SIRET'],$port['description_projet'], $port['id_utilisateur'],$port['id_secteur_projet'], $port['site_web']);
+            $un_projet->un_porteur = Bdd::getPersonneId($port['id_utilisateur']);
+            $un_projet->un_secteur = Bdd::getSecteurId($port['id_secteur_projet']);
            array_push($desPorteurs, $un_projet);
         }
         //var_dump($desProjets);
@@ -246,39 +226,101 @@ class Bdd
 
     public function getProjetId($unId){
         $req = Bdd::$connection->prepare("SELECT * FROM projet where id_projet = :id");
-        
+
         $req->execute(array(':id' => $unId));
         $result = $req->fetch(PDO::FETCH_BOTH);
-        
-        $un_projet = new Projet($result['id_projet'], $result['nom_projet'], $result['SIREN'], $result['NIC'],
-            $result['check_digit_SIRET'], $result['description_projet'], $result['id_utilisateur'],
-            $result['id_secteur_projet'], $result['site_web'], $result['photo_1'], $result['photo_2'],
-            $result['photo_3'], $result['description_photo_1'], $result['description_photo_2'],
-            $result['description_photo_3'], $result['parcours'], $result['date_publication'], $result['logo']);
+        $un_projet = new projet($result['id_projet'], $result['nom_projet'], $result['SIREN'], $result['NIC'], $result['check_digit_SIRET'],$result['description_projet'], $result['id_utilisateur'],$result['id_secteur_projet'], $result['site_web']);
         $un_projet->un_porteur = Bdd::getPersonneId($result['id_utilisateur']);
         $un_projet->un_secteur = Bdd::getSecteurId($result['id_secteur_projet']);
         //var_dump($uneadresse);
         
-        return $un_projet;
+        return $un_projet;  
    }
 
-   public function getProjetIdUtil($unId){
-       $req = Bdd::$connection->prepare("SELECT * FROM projet where id_utilisateur = :id");
-       
-       $req->execute(array(':id' => $unId));
-       $result = $req->fetch(PDO::FETCH_BOTH);
-       
-       $un_projet = new Projet($result['id_projet'], $result['nom_projet'], $result['SIREN'], $result['NIC'],
-           $result['check_digit_SIRET'], $result['description_projet'], $result['id_utilisateur'],
-           $result['id_secteur_projet'], $result['site_web'], $result['photo_1'], $result['photo_2'],
-           $result['photo_3'], $result['description_photo_1'], $result['description_photo_2'],
-           $result['description_photo_3'], $result['parcours'], $result['date_publication'], $result['logo']);
-       $un_projet->un_porteur = Bdd::getPersonneId($result['id_utilisateur']);
-       $un_projet->un_secteur = Bdd::getSecteurId($result['id_secteur_projet']);
-       //var_dump($uneadresse);
-       
-       return $un_projet;
+   public function getProfilId($unId){
+  $req = Bdd::$connection->prepare("SELECT * FROM type_profil where id_type_profil = :id");
+
+        $req->execute(array(':id' => $unId));
+        $result = $req->fetch(PDO::FETCH_BOTH);
+        $un_type = new type_profil($result['id_type_profil'], $result['designation_type_profil']);
+    
+        //var_dump($uneadresse);
+        
+        return $un_type;
+
+   }
+     public function getUtilisateursId($unId){
+  $req = Bdd::$connection->prepare("SELECT * FROM utilisateur where id_utilisateur = :id");
+
+        $req->execute(array(':id' => $unId));
+        $result = $req->fetch(PDO::FETCH_BOTH);
+        $un_utilisateur = new Utilisateur($result['id_utilisateur'], $result['nom_utilisateur'], $result['prenom_utilisateur'], $result['date_naissance_utilisateur'], $result['telephone_utilisateur'], $result['email_utilisateur'], $result['nom_profil_utilisateur'], $result['mdp_profil_utilisateur'], $result['type_utilisateur'], $result['id_adresse'], $result['id_projet'], $result['id_type_profil'], $result['emargement'], $result['id_reunion'], $result['id_coop'], $result['id_statut']);
+        $un_utilisateur->une_adresse = Bdd::getAdresseId($result['id_adresse']);
+        $un_utilisateur->un_projet = Bdd::getProjetId($result['id_projet']);
+        $un_utilisateur->un_type = Bdd::getProfilId($result['id_type_profil']);
+        $un_utilisateur->un_statut = Bdd::getStatutId($result['id_statut']);
+        //var_dump($uneadresse);
+        
+        return $un_utilisateur;
+
+   }
+    public function getStatutId($unId){
+  $req = Bdd::$connection->prepare("SELECT * FROM statut where id_statut = :id");
+
+        $req->execute(array(':id' => $unId));
+        $result = $req->fetch(PDO::FETCH_BOTH);
+        $un_statut = new Statut($result['id_statut'], $result['libelle_statut']);
+    
+        //var_dump($un_statut);
+        
+        return $un_statut;
+
    }
 
+   public function getUtilisateurs(){
+        $req = Bdd::$connection->prepare("SELECT * FROM utilisateur where id_type_profil = 1");
+        $req->execute();
+        $desProfils = array();
+           
+            
+        
+        while ($prof = $req->fetch())
+        {
+           
+
+           $un_profil = new Utilisateur($prof['id_utilisateur'], $prof['nom_utilisateur'], $prof['prenom_utilisateur'], $prof['date_naissance_utilisateur'], $prof['telephone_utilisateur'], $prof['email_utilisateur'], $prof['nom_profil_utilisateur'], $prof['mdp_profil_utilisateur'], $prof['type_utilisateur'], $prof['id_adresse'], $prof['id_projet'], $prof['id_type_profil'], $prof['emargement'], $prof['id_reunion'], $prof['id_coop'], $prof['id_statut']);
+        $un_profil->une_adresse = Bdd::getAdresseId($prof['id_adresse']);
+        $un_profil->un_projet = Bdd::getProjetId($prof['id_projet']);
+        $un_profil->un_type = Bdd::getProfilId($prof['id_type_profil']);
+        $un_profil->un_statut = Bdd::getStatutId($prof['id_statut']);
+           array_push($desProfils, $un_profil);
+        }
+        //var_dump($desProfils);
+        return $desProfils;
+   }
+
+   public function modifyProfil($nom,$prenom,$date_naissance,$tel,$mail,$type,$adresse,$projet,$typeprofil,$statut){
+     
+        $req = Bdd::$connection->prepare(
+            "UPDATE  utilisateur SET nom_utilisateur = :nom, prenom_utilisateur = :prenom, date_naissance_utilisateur = :datenaissance, telephone_utilisateur = :telephone, email_utilisateur = :email, type_utilisateur = :type, id_adresse = :idadresse, id_projet = :idprojet, id_type_profil = :idtypeprofil, id_statut = :id_statut");
+        
+        $req->execute(array(
+            ':nom' => $nom,
+            ':prenom' => $prenom,
+            ':datenaissance' => $date_naissance,
+            ':telephone' => $tel,
+            ':email' => $mail,
+            ':type' => $type,
+            ':idadresse' => $adresse,
+            ':idprojet' => $projet,
+            ':idtypeprofil' => $typeprofil,
+            ':idstatut' => $statut
+        ));
+        
+        $id_adresse = Bdd::$connection->lastInsertId();
+       
+
+   }
 }
+
 ?>
