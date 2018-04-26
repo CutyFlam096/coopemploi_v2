@@ -8,10 +8,10 @@
 			<div class="col-lg-9 statut-connection" >
 				<h3>
 					{if isset($utilisateur)}
-						Vous ètes connecté(e) en tant que {$utilisateur->prenom_utilisateur} {$utilisateur->nom_utilisateur}</br>
+						Vous êtes connecté(e) en tant que {$utilisateur->prenom_utilisateur} {$utilisateur->nom_utilisateur}</br>
 						<a href='index.php?controller=connection&action=deconnection'>se deconnecter</a>
 					{else}
-						Vous n'ètes pas connecté(e)</br>
+						Vous n'êtes pas connecté(e)</br>
 						<a href='index.php?controller=connection&action=form-connection'>se connecter</a>
 					{/if}
 				</h3>
@@ -34,9 +34,8 @@
 	                    	<li><a href='index.php?controller=projet&action=gerer'>Gestion de son projet</a></li>
 	                    {elseif $utilisateur->id_type_profil == 2}
 		                    <li><a href='index.php'>Valider profil</a></li>
-		                    <li><a href='index.php'>Gerer profil</a></li>
 	                    	<li><a href='index.php'>Gerer rdv</a></li>
-	                    	<li><a href='index.php'>Gerer reunions</a></li>
+	                    	<li><a href='index.php?controller=reunion&action=voir'>Gerer reunions</a></li>
 	                    {/if}
 	                    
                     </ul>

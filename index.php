@@ -3,6 +3,8 @@ require_once ('autoload.php');
 session_start();
 
 $smarty = new Smarty();
+$smarty->assign('title',"COOP'EMPLOI");
+ 
 $db = new Bdd('mysql:host=localhost', 'dbname=coop_emploi', 'root', '');
 
 // //$action = $_REQUEST['action'];
@@ -14,8 +16,6 @@ if(!isset($_REQUEST['controller']))
 else
 {$controller = $_REQUEST['controller'];}
 
- $smarty->assign('title',"COOP'EMPLOI");
-    
 if(isset($_SESSION['compte']))
 {$smarty->assign('utilisateur',$_SESSION['compte'] );}
  

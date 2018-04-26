@@ -10,4 +10,7 @@
 		
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		
+		<script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.min.css">
     </head>

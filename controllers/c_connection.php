@@ -18,8 +18,6 @@ switch($action)
             $login= $_REQUEST['login'];
             $mdp=$_REQUEST['mdp'];
             
-            echo 'hey';
-            
             $recup = $db->getCompte($login, $mdp);
             if ($recup)
             {header("location: index.php");}
